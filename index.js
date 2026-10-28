@@ -37616,7 +37616,7 @@ class rM {
 const oM = [
     {
       id: 0,
-      name: "Espelho profissional ia",
+      name: "Espelho profissional",
       description: "Um prompt IA para transformar seu próprio histórico em um espelho profissional sincero.",
       image: "https://www.simplilearn.com/ice9/free_resources_article_thumb/artificial_intelligence_engineer.jpg",
       tags: [],
