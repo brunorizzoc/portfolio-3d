@@ -228,7 +228,7 @@
                 <text class="landing-headline" y="60" x="5">Olá, eu sou</text>
                 <text class="landing-headline" y="135" x="5">Bruno Rizzo.</text>
                 <text class="landing-subheading" x="10" y="185">
-                    Impulsiono equipes de tecnologia a resolver problemas!
+                    Coordeno TI conectando estratégia ao negócio!
                 </text>
 
                 <foreignObject x="8" y="250" height="100" width="300" requiredExtensions="http://www.w3.org/1999/xhtml">
@@ -313,7 +313,7 @@
                             <text x="0" y="0" font-size="12" class="about-header-upper-text">Nome:</text>
                             <text x="0" y="20" font-size="18" class="about-header-lower-text">Bruno Rizzo</text>
                             <text x="110" y="0" font-size="12" class="about-header-upper-text">Foco:</text>
-                            <text x="110" y="20" font-size="18" class="about-header-lower-text">Tecnologia</text>
+                            <text x="110" y="20" font-size="18" class="about-header-lower-text">Gestão & TI</text>
                             <text x="200" y="0" font-size="12" class="about-header-upper-text">Base:</text>
                             <text x="200" y="20" font-size="18" class="about-header-lower-text">Brasil</text>
                         </g>
@@ -395,9 +395,9 @@
                                 href="/icons/baby-pixel.png" x="6" y="7" />
 
                             <!--First Text-->
-                            <text x="88" y="33" class="about-text">Atuo com liderança de sistemas corporativos, conectando</text>
-                                 <text x="88" y="50" class="about-text">tecnologia, processos, riscos e necessidades do negócio.</text>
-                                 
+                            <text x="88" y="33" class="about-text">Coordeno a estratégia, sustentação e governança de soluções</text>
+                                <text x="88" y="50" class="about-text">em sistemas corporativos, compliance, dados e operações.</text>
+                                
                         </g>
 
                         <!--Second Content-->
@@ -415,8 +415,8 @@
                             <g id="about-icon-1" transform="translate(417 5) scale(0.8)"> </g>
 
                             <!--Second Text-->
-                            <text x="5" y="33" class="about-text">Transformo problemas complexos em estruturas claras,</text>
-                            <text x="5" y="50" class="about-text">decisões e entregas que fazem sentido para as pessoas.</text>
+                            <text x="5" y="33" class="about-text">Atuo como elo entre negócio e TI na gestão de portfólio, riscos,</text>
+                            <text x="5" y="50" class="about-text">orçamentos, fornecedores estratégicos e liderança de equipes.</text>
                             <!-- <text x="55" y="70" class="about-text"> platform and more...</text> -->
                         </g>
 
@@ -436,9 +436,8 @@
                                 href="/icons/rocket-pixel.png" x="6" y="7" />
 
                             <!--Third Text-->
-                            <text x="88" y="33" class="about-text">Fora do contexto corporativo, exploro IA para criar
-                                e desenvolver aplicações, jogos e experiências digitais.
-                            <text x="88" y="50" class="about-text">com foco em experimentação, evolução contínua e produto</text>
+                            <text x="88" y="33" class="about-text">Incentivo inovação explorando IA, produtos digitais</text>
+                            <text x="88" y="50" class="about-text">e jogos com foco em experimentação e evolução contínua.</text>
                         </g>
                     </g>
 
@@ -526,6 +525,26 @@
             </div>
 
             <div id="contact-container">
+                <!--Loading Container-->
+                <div id="contact-loading-container" class="center contact-container hide">
+                    <h4>Enviando...</h4>
+                </div>
+
+                <!--Result Container-->
+                <div id="contact-result-container" class="contact-container column center hide">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <polyline id="contact-success-line" class="hide" stroke="#A1CC4D" points="10,70 40,100 115,20">
+                        </polyline>
+                        <line stroke="rgb(216, 84, 84)" class="contact-error-line" x1="5" y1="5" x2="115" y2="115">
+                        </line>
+                        <line stroke="rgb(216, 84, 84)" class="contact-error-line" x1="115" y1="5" x2="5" y2="115">
+                        </line>
+                    </svg>
+                    <div id="contact-result-message-container" class="center column">
+
+                    </div>
+                    <div class="small-button orange-hover" id="contact-result-button"></div>
+                </div>
                 <!--Form Container-->
                 <div id="contact-form-container" class="column contact-container">
                     <div id="contact-name-input" class="input-container column">
@@ -577,42 +596,8 @@
                         </div>
                     </div>
                 </div>
-
-                <!--Loading Container-->
-                <div id="contact-loading-container" class="center contact-container hide">
-                    <h4>Enviando...</h4>
-                </div>
-
-                <!--Result Container-->
-                <div id="contact-result-container" class="contact-container column center hide">
-                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                        <polyline id="contact-success-line" class="hide" stroke="#A1CC4D" points="10,70 40,100 115,20">
-                        </polyline>
-                        <line stroke="rgb(216, 84, 84)" class="contact-error-line" x1="5" y1="5" x2="115" y2="115">
-                        </line>
-                        <line stroke="rgb(216, 84, 84)" class="contact-error-line" x1="115" y1="5" x2="5" y2="115">
-                        </line>
-                    </svg>
-                    <div id="contact-result-message-container" class="center column">
-
-                    </div>
-                    <div class="small-button orange-hover" id="contact-result-button"></div>
-                </div>
-
             </div>
         </section>
-
-        <footer class="row center">
-            <span>&copy; Bruno Rizzo</span>
-
-            <!--Legal Container-->
-            <div id="legal-container" class="row">
-               
-                   
-            </div>
-        </footer>
     </div>
-
 </body>
-
 </html>
