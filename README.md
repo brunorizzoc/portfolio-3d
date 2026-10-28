@@ -39,7 +39,7 @@ Please note that the 3D models used in this project were **purchased from a thir
 ---
 
 ## 👨‍💻 Author
-**Yash Chauhan**
+**Bruno Rizzo**
 - GitHub: [@yashchauhan008](https://github.com/Yashchauhan008 )
 - LinkedIn: [yashchauhan](https://www.linkedin.com/in/yashchauhan008 )
 
