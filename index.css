@@ -288,7 +288,7 @@
     justify-content: flex-start;
     align-items: center;
     font-family: Electrolize, sans-serif;
-    color: #34bfff;
+    color: #3459ff;
     min-height: 100vh;
     padding-bottom: 90px
 }
@@ -301,7 +301,7 @@
 }
 
 #about-content-container span {
-    color: #34bfff
+    color: #3448ff
 }
 
 #skills-svg {
@@ -695,7 +695,7 @@ textarea:focus {
 }
 
 .error-label {
-    color: #d85454
+    color: #0400ff
 }
 
 .error-container {

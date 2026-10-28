@@ -1,0 +1,654 @@
+Navigated to https://brunorizzo.vercel.app/
+index-BeTjDs04.js:3107 HTML5 Audio pool exhausted, returning potentially locked audio object.
+(anonymous) @ index-BeTjDs04.js:3107
+Promise.catch
+_obtainHtml5Audio @ index-BeTjDs04.js:3107
+create @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+i @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+  GET https://brunorizzo.vercel.app/sounds/mouse-wheel-0.mp3 404 (Not Found)
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/bubble-1.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/bubble-2.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/notification.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/transition-0.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/gasp.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/hologram.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/lab-ambience.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/mouse-wheel-1.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/water-splash.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/mouse-wheel-2.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/bubble-0.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/water-up.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/button-click.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/bird.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/chair-down.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/transition-1.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/chair-impact.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:2996  GET https://brunorizzo.vercel.app/models/room/shadow-model.glb 404 (Not Found)
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3043 Error: fetch for "https://brunorizzo.vercel.app/models/room/shadow-model.glb" responded with 404: 
+    at index-BeTjDs04.js:2996:151052
+o @ index-BeTjDs04.js:3043
+(anonymous) @ index-BeTjDs04.js:2996
+Promise.catch
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:2996  GET https://brunorizzo.vercel.app/models/room/model.glb 404 (Not Found)
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3043 Error: fetch for "https://brunorizzo.vercel.app/models/room/model.glb" responded with 404: 
+    at index-BeTjDs04.js:2996:151052
+o @ index-BeTjDs04.js:3043
+(anonymous) @ index-BeTjDs04.js:2996
+Promise.catch
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:2996  GET https://brunorizzo.vercel.app/models/character/model.glb 404 (Not Found)
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3043 Error: fetch for "https://brunorizzo.vercel.app/models/character/model.glb" responded with 404: 
+    at index-BeTjDs04.js:2996:151052
+o @ index-BeTjDs04.js:3043
+(anonymous) @ index-BeTjDs04.js:2996
+Promise.catch
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:2996  GET https://brunorizzo.vercel.app/models/lab/model.glb 404 (Not Found)
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3043 Error: fetch for "https://brunorizzo.vercel.app/models/lab/model.glb" responded with 404: 
+    at index-BeTjDs04.js:2996:151052
+o @ index-BeTjDs04.js:3043
+(anonymous) @ index-BeTjDs04.js:2996
+Promise.catch
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:2996  GET https://brunorizzo.vercel.app/models/lab/shadow-model.glb 404 (Not Found)
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3043 Error: fetch for "https://brunorizzo.vercel.app/models/lab/shadow-model.glb" responded with 404: 
+    at index-BeTjDs04.js:2996:151052
+o @ index-BeTjDs04.js:3043
+(anonymous) @ index-BeTjDs04.js:2996
+Promise.catch
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:2996  GET https://brunorizzo.vercel.app/models/contact/shadow-model.glb 404 (Not Found)
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3043 Error: fetch for "https://brunorizzo.vercel.app/models/contact/shadow-model.glb" responded with 404: 
+    at index-BeTjDs04.js:2996:151052
+o @ index-BeTjDs04.js:3043
+(anonymous) @ index-BeTjDs04.js:2996
+Promise.catch
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3107  GET https://brunorizzo.vercel.app/sounds/long-keyboard.mp3 404 (Not Found)
+s @ index-BeTjDs04.js:3107
+o @ index-BeTjDs04.js:3107
+load @ index-BeTjDs04.js:3107
+init @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+r @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+setupSounds @ index-BeTjDs04.js:3107
+Hy @ index-BeTjDs04.js:3107
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:2996  GET https://brunorizzo.vercel.app/models/contact/model.glb 404 (Not Found)
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+index-BeTjDs04.js:3043 Error: fetch for "https://brunorizzo.vercel.app/models/contact/model.glb" responded with 404: 
+    at index-BeTjDs04.js:2996:151052
+o @ index-BeTjDs04.js:3043
+(anonymous) @ index-BeTjDs04.js:2996
+Promise.catch
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:3043
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+baked.jpg:1  GET https://brunorizzo.vercel.app/models/room/baked.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+heart.png:1  GET https://brunorizzo.vercel.app/textures/sprites/heart.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+shirt.jpg:1  GET https://brunorizzo.vercel.app/textures/matcaps/shirt.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+shadow-baked.jpg:1  GET https://brunorizzo.vercel.app/models/room/shadow-baked.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+0.png:1  GET https://brunorizzo.vercel.app/models/character/faces/smile/0.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+blink-1.png:1  GET https://brunorizzo.vercel.app/models/character/faces/blink-1.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+1.png:1  GET https://brunorizzo.vercel.app/models/room/desktops/1.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+scared.png:1  GET https://brunorizzo.vercel.app/models/character/faces/scared.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+blink-0.png:1  GET https://brunorizzo.vercel.app/models/character/faces/blink-0.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+0.png:1  GET https://brunorizzo.vercel.app/models/room/desktops/0.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+white.jpg:1  GET https://brunorizzo.vercel.app/textures/matcaps/white.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+2.png:1  GET https://brunorizzo.vercel.app/models/character/faces/smile/2.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+head-baked.jpg:1  GET https://brunorizzo.vercel.app/models/character/head-baked.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+sleepy.png:1  GET https://brunorizzo.vercel.app/models/character/faces/sleepy.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+1.png:1  GET https://brunorizzo.vercel.app/models/character/faces/smile/1.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+bubble.png:1  GET https://brunorizzo.vercel.app/textures/sprites/bubble.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+1.png:1  GET https://brunorizzo.vercel.app/models/character/faces/contact/1.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+pants.jpg:1  GET https://brunorizzo.vercel.app/textures/matcaps/pants.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+bubble-pop.png:1  GET https://brunorizzo.vercel.app/textures/sprites/bubble-pop.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+default.png:1  GET https://brunorizzo.vercel.app/models/character/faces/default.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+new-message.png:1  GET https://brunorizzo.vercel.app/textures/sprites/new-message.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+tone-1.png:1  GET https://brunorizzo.vercel.app/textures/sprites/tone-1.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+screen-offline.jpg:1  GET https://brunorizzo.vercel.app/models/lab/screen-offline.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+baked.jpg:1  GET https://brunorizzo.vercel.app/models/lab/baked.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+shadow-baked.jpg:1  GET https://brunorizzo.vercel.app/models/lab/shadow-baked.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+1-notification.png:1  GET https://brunorizzo.vercel.app/models/room/desktops/1-notification.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+david.png:1  GET https://brunorizzo.vercel.app/images/david.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+(index):603  GET https://brunorizzo.vercel.app/sounds/room-ambience.mp3 net::ERR_ABORTED 404 (Not Found)
+baked.jpg:1  GET https://brunorizzo.vercel.app/models/contact/baked.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+tone-0.png:1  GET https://brunorizzo.vercel.app/textures/sprites/tone-0.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+shadow-baked.jpg:1  GET https://brunorizzo.vercel.app/models/contact/shadow-baked.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+skin.jpg:1  GET https://brunorizzo.vercel.app/textures/matcaps/skin.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+screen-graph.jpg:1  GET https://brunorizzo.vercel.app/models/lab/screen-graph.jpg 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+2.png:1  GET https://brunorizzo.vercel.app/models/character/faces/contact/2.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+tone-2.png:1  GET https://brunorizzo.vercel.app/textures/sprites/tone-2.png 404 (Not Found)
+Image
+load @ index-BeTjDs04.js:2996
+load @ index-BeTjDs04.js:2996
+startLoading @ index-BeTjDs04.js:3065
+fy @ index-BeTjDs04.js:3065
+$ @ index-BeTjDs04.js:3107
+(anonymous) @ index-BeTjDs04.js:3107
+content.js:11 Webpage to PNG extension loaded
