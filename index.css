@@ -50,7 +50,7 @@
 
 #transition-push {
     height: 200vh;
-    background: #FF923E
+    background: #249415
 }
 
 @media (max-aspect-ratio: 12/10) {
@@ -95,7 +95,7 @@
 }
 
 #logo-dark-background {
-    background: #091434;
+    background: #0c7621;
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -104,7 +104,7 @@
 }
 
 #logo-white-background {
-    background: white;
+    background: rgb(25, 0, 255);
     width: 200px
 }
 
@@ -374,7 +374,7 @@
 
 .about-skill-bar {
     height: 100%;
-    background: linear-gradient(to right, #2d88dd, #34bfff) !important;
+    background: linear-gradient(to right, #1d52c5, #34bfff) !important;
     width: 30%
 }
 
@@ -546,7 +546,7 @@
 .work-banner-container {
     height: 50px;
     width: 300px;
-    background-color: #ffcb00;
+    background-color: #0011ff;
     position: absolute;
     transform: rotate(-45deg) translate(-92px, -30px)
 }
@@ -788,7 +788,7 @@ line {
 }
 
 .clickCTA:after {
-    content: "Click to enable\asounds.";
+    content: "Ligar som";
     line-height: 17px;
     white-space: pre-wrap;
     text-align: center;
@@ -801,7 +801,7 @@ line {
 .hover-spread {
     height: 16px;
     min-width: 16px;
-    background: #FF923E;
+    background: #249415;
     position: absolute;
     opacity: .1;
     border-radius: 50%
@@ -863,7 +863,7 @@ line {
     border-radius: 50%;
     content: "";
     color: #fff;
-    background: #FF923E;
+    background: #249415;
     left: -10px;
     top: 50%;
     transform: translate(-16px, -50%)
@@ -906,7 +906,7 @@ line {
         height: 3px;
         margin: 0 auto;
         content: "";
-        background: #FF923E;
+        background: #249415;
         width: 100%;
         bottom: -2px;
         left: 0;
@@ -1077,7 +1077,7 @@ h4 {
 }
 
 h5 {
-    color: #ff923e;
+    color: #249415;
     font-size: 1.2rem;
     font-weight: 500
 }
@@ -1110,7 +1110,7 @@ hr {
 
 .section-subheader-container hr {
     width: 40px;
-    background-color: #ff923e;
+    background-color: #221ffc;
     margin: 0 20px 0 0
 }
 
@@ -1144,8 +1144,8 @@ hr {
 }
 
 .orange-hover {
-    background-color: #ff923e;
-    background-image: radial-gradient(circle at center, #ff9b4f 50%, transparent 50%);
+    background-color: #23910d;
+    background-image: radial-gradient(circle at center, #1b1feb 50%, transparent 50%);
     background-repeat: no-repeat;
     transition: background-size .3s;
     background-size: 0 0;

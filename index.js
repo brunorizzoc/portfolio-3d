@@ -37616,52 +37616,48 @@ class rM {
 const oM = [
     {
       id: 0,
-      name: "the iqic",
-      description: "Delivered a professional freelance project for a quality inspection company, creating a comprehensive business website",
-      image: "images/projects/theiqic.jpeg",
-      tags: ["javascript", "html", "css", "freelance"],
-      liveview: "https://theiqic.com/",
-      // github: "https://github.com/satvik9373/coffee-website-.git",
-      alt: "Coffee Shop Website",
+      name: "Espelho profissional ia",
+      description: "Um prompt IA para transformar seu próprio histórico em um espelho profissional sincero.",
+      image: "https://www.simplilearn.com/ice9/free_resources_article_thumb/artificial_intelligence_engineer.jpg",
+      tags: [],
+      liveview: "https://www.linkedin.com/pulse/espelho-profissional-ia-bruno-rizzo-rfakf/",
+      alt: "",
     },
     {
       id: 1,
-      name: "venchers campaign",
-      description: "a block-based photo sharing system inspired by the historic Million Dollar Homepage concept",
-      image: "images/projects/krushigram.png",
-      tags: ["react", "express", "multer", "googleAuth","Cloudinery"],
-      liveview: "https://venchers-campaign.vercel.app/",
-      alt: "venchers campaign",
+      name: "ROI, custos e benefícios",
+      description: "O problema raramente está no número. Só esse exercício já muda bastante a qualidade da discussão.",
+      image: "https://www.flowti.com.br/storage/blog/17321220231228658db11c10fa9.jpg",
+      tags: [],
+      liveview: "https://www.linkedin.com/pulse/roi-o-problema-raramente-est%C3%A1-n%C3%BAmero-bruno-rizzo-euvsf/",
+      alt: "",
     },
     {
       id: 2,
-      name: "vapor ui",
-      description: "UI component library featuring 20+ reusable components, text animations, background animations, loading page elements, and interactive UI element ",
-      image: "images/projects/vaporui.jpeg",
-      tags: ["javascript", "react", "ui","framer"],
-      liveview: "https://vapor-ui.vercel.app/",
-      // github: "https://github.com/satvik9373/yoga-class.git",
-      alt: "Fitness Institute",
+      name: "Verdadeiros líderes aprendem todos os dias",
+      description: "+ de 2 décadas em TI (Libbs), vivendo Sistemas Corporativos, Governança, gestão de aplicações e liderança de equipes.",
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQHoxAM4qAH1vg/profile-displayphoto-scale_400_400/B4DZjFFsOIH4Ag-/0/1755653261748?e=1795046400&v=beta&t=vtthmK8v9N_U-B6La9UpodWuQB5A7ubIrKgowMpoJ38",
+      tags: [],
+      liveview: "https://lnkd.in/p/dutKfMrw",
+      alt: "",
     },
     {
       id: 3,
-      name: "Quick Labs",
-      description: "Quick labs is an LMS developed for teaching assistants at my university to provide lab solutions, manage materials, and support students.",
-      image: "images/projects/studybuddy.jpeg",
-      tags: ["javascript", "react", "mongodb", ""],
-      liveview: "http://quicklabs.fun/",
-      // github: "https://github.com/satvik9373/Think-Beyond-Marketing",
-      alt: "Digital Marketing Agency",
+      name: "IA Não Resolve Caos",
+      description: "Como líder e sempre em constante evolução, observo como empresas e equipes estão tentando incorporar IA no dia a dia para acelerar entregas.",
+      image: "https://db00ytxhy7e1q.cloudfront.net/2025/11/shutterstock_1394544914.jpg",
+      tags: [],
+      liveview: "https://www.linkedin.com/pulse/ia-n%C3%A3o-resolve-caos-framework-para-gerar-mvps-de-verdade-bruno-rizzo-zwngf/",
+      alt: "",
     },
     {
       id: 4,
-      name: "Open Talk",
-      description: "Open Talk is a platform where people can share their achievements and hacks, allowing others to like or dislike them without needing an account.",
-      image: "images/projects/opentalk.jpeg",
-      tags: ["react", "mongodb", "express"],
-      liveview: "https://opentalk1.netlify.app/",
-      // github: "https://github.com/satvik9373/lms-websitee",
-      alt: "Affiliate Marketing and earning Website",
+      name: "De IA para Líder",
+      description: "Um pouco da jornada recente de 2024 a hoje como líder o que vivenciei e ainda vivencio",
+      image: "https://static.portaldaindustria.com.br/portaldaindustria/noticias/media/imagem_plugin/shutterstock_0b8IGh5.jpg",
+      tags: [],
+      liveview: "https://www.linkedin.com/pulse/minha-jornada-com-genia-na-libbs-bruno-rizzo-ebmvf/",
+      alt: "",
     },
   ],
   aM = {
@@ -37779,7 +37775,7 @@ class lM {
         // Render only the "Live View" button if a live view link is present
         t = `
             <div id="work-item-orange-button-${e.id}" class="work-item-orange-button small-button center orange-hover" style="width: 100%; margin: 0;">
-                Live View
+                Abrir
             </div>
         `;
     } else if (e.twitter) {
@@ -37871,23 +37867,23 @@ class lM {
 }
 const cM = [
   {
-    name: "web development",
+    name: "Coordenação",
     width: "90%",
   },
   {
-    name: "app devlopment",
+    name: "Alinhamento",
     width: "55%",
   },
   {
-    name: "graphic design",
+    name: "Resultados",
     width: "90%",
   },
   {
-    name: "frontend",
+    name: "Processos",
     width: "80%",
   },
   {
-    name: "backend",
+    name: "Diretorias",
     width: "75%",
   },
 ];
