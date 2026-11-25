@@ -17,6 +17,14 @@
       "destination": "/index.html"
     },
     {
+      "source": "/3",
+      "destination": "/3/index.html"
+    },
+    {
+      "source": "/3/",
+      "destination": "/3/index.html"
+    },
+    {
       "source": "/3d",
       "destination": "/3d/index.html"
     }

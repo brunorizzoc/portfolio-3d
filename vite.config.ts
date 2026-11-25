@@ -18,6 +18,8 @@ function routePortfolioPlugin(): Plugin {
       }
       if (pathname === '/3d') {
         req.url = '/3d/index.html' + qs;
+      } else if (pathname === '/3' || pathname === '/3/') {
+        req.url = '/3/index.html' + qs;
       } else if (pathname === '/2' || pathname === '/2/') {
         req.url = '/index.html' + qs;
       }
@@ -49,6 +51,7 @@ export default defineConfig(() => {
         input: {
           main: path.resolve(__dirname, 'index.html'),
           v3d: path.resolve(__dirname, '3d/index.html'),
+          v3: path.resolve(__dirname, '3/index.html'),
         },
       },
     },

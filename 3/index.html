@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bruno Rizzo · Desktop Wallpaper</title>
+<meta name="description" content="Bruno Rizzo: liderança em tecnologia, sistemas corporativos, inteligência artificial e desenvolvimento de produtos digitais.">
+<meta name="theme-color" content="#06131B">
+<link rel="icon" type="image/png" href="/head/favion-32x32.png" sizes="32x32">
+<link rel="shortcut icon" type="image/x-icon" href="/head/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-0:#050E14;
+  --bg-1:#081822;
+  --surface:rgba(10,25,35,.68);
+  --surface-2:rgba(255,255,255,.04);
+  --border:rgba(255,255,255,.10);
+  --border-soft:rgba(255,255,255,.06);
+  --text:#F3F8F6;
+  --text-2:#B8C9C3;
+  --text-3:#7E9690;
+  --green:#23C02E;
+  --green-soft:#87D78A;
+  --blue:#0049FF;
+  --blue-soft:#6490F6;
+  --font-d:"Outfit","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  --font:"Plus Jakarta Sans","Segoe UI Variable Text","Segoe UI",system-ui,sans-serif;
+}
+html.day{
+  --bg-0:#EEF6F1;
+  --bg-1:#DCEFE3;
+  --surface:rgba(255,255,255,.76);
+  --surface-2:rgba(16,34,44,.04);
+  --border:rgba(16,34,44,.10);
+  --border-soft:rgba(16,34,44,.07);
+  --text:#10222C;
+  --text-2:#3A505D;
+  --text-3:#5E7582;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{
+  margin:0;
+  width:100%;
+  height:100%;
+  font-family:var(--font);
+  color:var(--text);
+  background:var(--bg-0);
+  -webkit-font-smoothing:antialiased;
+  overflow:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+
+.wallpaper{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  background:
+    radial-gradient(56% 68% at 78% 46%,rgba(35,192,46,.16) 0%,rgba(0,73,255,.10) 44%,transparent 74%),
+    radial-gradient(45% 55% at 18% 85%,rgba(0,73,255,.12) 0%,transparent 70%),
+    linear-gradient(135deg,var(--bg-0) 0%,var(--bg-1) 100%);
+  overflow:hidden;
+}
+html.day .wallpaper{
+  background:
+    radial-gradient(56% 68% at 78% 46%,rgba(35,192,46,.22) 0%,rgba(100,144,246,.16) 44%,transparent 74%),
+    radial-gradient(45% 55% at 18% 85%,rgba(100,144,246,.15) 0%,transparent 70%),
+    linear-gradient(135deg,#F6FBF8 0%,#E5F3EA 100%);
+}
+
+#bgCanvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+  pointer-events:none;
+}
+
+/* Safe zone padding: leaves left margin (~110px) clear for Windows desktop icons & bottom clear for taskbar */
+.shell{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:100%;
+  padding:clamp(24px,3.2vh,40px) clamp(28px,3.4vw,52px) clamp(48px,6.2vh,68px) clamp(96px,8.5vw,148px);
+  display:grid;
+  grid-template-columns:minmax(580px,1.28fr) minmax(320px,.72fr);
+  gap:clamp(24px,3vw,48px);
+  align-items:center;
+}
+
+.board{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(14px,1.8vh,20px);
+  padding:clamp(22px,2.8vh,32px) clamp(24px,2.4vw,34px);
+  border-radius:24px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  backdrop-filter:blur(24px) saturate(1.35);
+  -webkit-backdrop-filter:blur(24px) saturate(1.35);
+  box-shadow:0 32px 80px -36px rgba(0,0,0,.65);
+  max-height:calc(100vh - 96px);
+}
+html.day .board{
+  box-shadow:0 28px 70px -34px rgba(9,40,34,.22);
+}
+
+/* Header block inside board */
+.id-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:clamp(12px,1.5vh,18px);
+  border-bottom:1px solid var(--border-soft);
+}
+.id-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-width:0;
+}
+.avatar{
+  width:72px;
+  height:72px;
+  border-radius:18px;
+  overflow:hidden;
+  flex:none;
+  border:1px solid var(--border);
+  background:linear-gradient(135deg,rgba(35,192,46,.22),rgba(0,73,255,.22));
+  display:grid;
+  place-items:center;
+}
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+}
+.avatar-fb{
+  font-family:var(--font-d);
+  font-weight:800;
+  font-size:24px;
+  color:var(--green-soft);
+}
+.id-text{min-width:0}
+.kicker{
+  margin:0 0 3px;
+  font-size:12px;
+  font-weight:600;
+  color:var(--text-3);
+  letter-spacing:.03em;
+}
+.name{
+  margin:0;
+  font-family:var(--font-d);
+  font-size:clamp(28px,2.5vw,38px);
+  line-height:1.05;
+  font-weight:800;
+  letter-spacing:-.03em;
+  display:inline-block;
+  background:linear-gradient(95deg,#23C02E 0%,#14B8A6 46%,#3B82F6 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+html.day .name{
+  background:linear-gradient(95deg,#0E7A2A 0%,#0E9F6E 45%,#0049FF 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.tagline{
+  margin:4px 0 0;
+  font-size:clamp(13.5px,1.05vw,15.5px);
+  font-weight:500;
+  color:var(--text-2);
+}
+
+.clock-box{
+  text-align:right;
+  flex:none;
+  font-variant-numeric:tabular-nums;
+}
+.clock-time{
+  font-family:var(--font-d);
+  font-size:clamp(28px,2.5vw,40px);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:-.03em;
+  color:var(--text);
+}
+.clock-date{
+  margin-top:4px;
+  font-size:12.5px;
+  color:var(--text-3);
+  text-transform:capitalize;
+}
+
+/* Middle 2-column content */
+.mid-grid{
+  display:grid;
+  grid-template-columns:0.92fr 1.28fr;
+  gap:clamp(18px,2vw,28px);
+  padding-bottom:clamp(12px,1.5vh,18px);
+  border-bottom:1px solid var(--border-soft);
+}
+.sec-title{
+  margin:0 0 10px;
+  font-family:var(--font-d);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--green-soft);
+}
+html.day .sec-title{color:#0E7A2A}
+
+/* Roles bars */
+.roles{
+  display:grid;
+  gap:9px;
+}
+.role-item{display:grid;gap:4px}
+.role-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  font-size:13.5px;
+  font-weight:600;
+}
+.role-top span:last-child{
+  font-variant-numeric:tabular-nums;
+  font-size:12.5px;
+  color:var(--text-2);
+}
+.bar{
+  height:5px;
+  border-radius:999px;
+  background:var(--surface-2);
+  overflow:hidden;
+}
+.bar i{
+  display:block;
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg,#23C02E 0%,#10B981 55%,#3B82F6 100%);
+}
+
+/* Pillars */
+.pillars{
+  display:grid;
+  gap:10px;
+  border-left:1px solid var(--border-soft);
+  padding-left:clamp(16px,1.8vw,24px);
+}
+.pillar h3{
+  margin:0 0 2px;
+  font-family:var(--font-d);
+  font-size:14px;
+  font-weight:700;
+  color:var(--text);
+}
+.pillar p{
+  margin:0;
+  font-size:12.5px;
+  line-height:1.42;
+  color:var(--text-2);
+}
+
+/* Publications strip */
+.pubs-wrap{
+  padding-bottom:clamp(10px,1.3vh,14px);
+  border-bottom:1px solid var(--border-soft);
+}
+.pubs{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:10px;
+}
+.pub{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:10px 11px;
+  border-radius:12px;
+  background:var(--surface-2);
+  border:1px solid var(--border-soft);
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.pub:hover{
+  border-color:rgba(35,192,46,.45);
+  background:rgba(35,192,46,.08);
+  transform:translateY(-1px);
+}
+.pub b{
+  font-family:var(--font-d);
+  font-size:12.5px;
+  line-height:1.25;
+  color:var(--text);
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.pub span{
+  font-size:11px;
+  line-height:1.35;
+  color:var(--text-3);
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  margin-top:auto;
+}
+
+/* Contacts bottom strip */
+.contacts{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 20px;
+  font-size:12.5px;
+  color:var(--text-2);
+}
+.contacts a{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  transition:color .2s;
+  white-space:nowrap;
+}
+.contacts a:hover{color:var(--green-soft)}
+html.day .contacts a:hover{color:#0E7A2A}
+.contacts strong{
+  font-weight:700;
+  color:var(--text);
+}
+
+/* Subtle top-right browser utility (quiet on desktop wallpaper) */
+.wp-tools{
+  position:fixed;
+  top:14px;
+  right:18px;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  opacity:.28;
+  transition:opacity .25s;
+}
+.wp-tools:hover,.wp-tools:focus-within{opacity:1}
+.wp-btn{
+  height:30px;
+  padding:0 11px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  backdrop-filter:blur(10px);
+  font-size:11.5px;
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  white-space:nowrap;
+}
+.wp-btn:hover{border-color:rgba(35,192,46,.5)}
+
+/* Right hero space reserved visually for WebGL 3D Letter B */
+.stage-spacer{
+  height:100%;
+  pointer-events:none;
+}
+
+@media (max-width:1180px){
+  html,body{overflow:auto;height:auto;min-height:100%}
+  .wallpaper{height:auto;min-height:100vh}
+  .shell{
+    grid-template-columns:1fr;
+    padding:64px 20px 40px;
+  }
+  .board{max-height:none}
+  .mid-grid{grid-template-columns:1fr}
+  .pillars{border-left:0;padding-left:0;border-top:1px solid var(--border-soft);padding-top:14px}
+  .pubs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stage-spacer{display:none}
+}
+@media (max-width:640px){
+  .id-row{flex-direction:column;align-items:flex-start}
+  .clock-box{text-align:left}
+  .pubs{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .pub{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wallpaper">
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <div class="wp-tools" aria-label="Controles rápidos">
+    <button class="wp-btn" id="themeBtn" type="button">Tema: Noite</button>
+    <a class="wp-btn" href="/">Portfólio</a>
+    <a class="wp-btn" href="/3d">Versão 3D</a>
+  </div>
+
+  <main class="shell">
+    <section class="board" aria-label="Resumo do portfólio de Bruno Rizzo">
+      <header class="id-row">
+        <div class="id-left">
+          <div class="avatar">
+            <img src="/skills-profile-picture.png" alt="Bruno Rizzo" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.hidden=false;">
+            <span class="avatar-fb" hidden>BR</span>
+          </div>
+          <div class="id-text">
+            <p class="kicker">Gestão · Coordenação · +20 anos em TI Corporativa</p>
+            <h1 class="name">Bruno Rizzo</h1>
+            <p class="tagline">Coordeno TI conectando estratégia ao negócio!</p>
+          </div>
+        </div>
+        <div class="clock-box" aria-live="off">
+          <div class="clock-time" id="clockTime">--:--</div>
+          <div class="clock-date" id="clockDate">--</div>
+        </div>
+      </header>
+
+      <div class="mid-grid">
+        <div>
+          <h2 class="sec-title">Papéis</h2>
+          <div class="roles">
+            <div class="role-item"><div class="role-top"><span>Coordenação</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
+            <div class="role-item"><div class="role-top"><span>Resultados</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
+            <div class="role-item"><div class="role-top"><span>Processos</span><span>80%</span></div><div class="bar"><i style="width:80%"></i></div></div>
+            <div class="role-item"><div class="role-top"><span>Diretorias</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
+            <div class="role-item"><div class="role-top"><span>Alinhamento</span><span>55%</span></div><div class="bar"><i style="width:55%"></i></div></div>
+          </div>
+        </div>
+
+        <div class="pillars">
+          <h2 class="sec-title">Sobre Mim · Pilares</h2>
+          <div class="pillar">
+            <h3>Estratégia, Governança e Operações</h3>
+            <p>Coordeno estratégia, equipes, governança de soluções, sistemas corporativos, compliance, dados e operações.</p>
+          </div>
+          <div class="pillar">
+            <h3>Negócio, TI e Liderança</h3>
+            <p>Elo entre negócio e TI na gestão de portfólio, riscos, orçamentos, fornecedores estratégicos e liderança.</p>
+          </div>
+          <div class="pillar">
+            <h3>Inovação, IA e Produtos Digitais</h3>
+            <p>Incentivo soluções IA, produtos digitais e apps com foco em experimentação e evolução.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pubs-wrap">
+        <h2 class="sec-title">Ciclo de Vida · Publicações no LinkedIn</h2>
+        <div class="pubs">
+          <a class="pub" href="https://www.linkedin.com/pulse/espelho-profissional-ia-bruno-rizzo-rfakf/" target="_blank" rel="noopener noreferrer">
+            <b>Espelho profissional</b>
+            <span>Prompt IA para histórico profissional</span>
+          </a>
+          <a class="pub" href="https://www.linkedin.com/pulse/roi-o-problema-raramente-est%C3%A1-n%C3%BAmero-bruno-rizzo-euvsf/" target="_blank" rel="noopener noreferrer">
+            <b>ROI, custos e benefícios</b>
+            <span>Qualidade da discussão executiva</span>
+          </a>
+          <a class="pub" href="https://lnkd.in/p/dutKfMrw" target="_blank" rel="noopener noreferrer">
+            <b>Líderes aprendem todos os dias!</b>
+            <span>+2 décadas em TI e Governança</span>
+          </a>
+          <a class="pub" href="https://www.linkedin.com/pulse/ia-n%C3%A3o-resolve-caos-framework-para-gerar-mvps-de-verdade-bruno-rizzo-zwngf/" target="_blank" rel="noopener noreferrer">
+            <b>IA Não Resolve Caos</b>
+            <span>Framework para MVPs de verdade</span>
+          </a>
+          <a class="pub" href="https://www.linkedin.com/pulse/minha-jornada-com-genia-na-libbs-bruno-rizzo-ebmvf/" target="_blank" rel="noopener noreferrer">
+            <b>De IA para Líder</b>
+            <span>Jornada com GenIA de 2024 a hoje</span>
+          </a>
+        </div>
+      </div>
+
+      <footer class="contacts" aria-label="Canais diretos">
+        <a href="https://wa.me/5511947688999" target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong> +55 (11) 94768-8999</a>
+        <a href="mailto:brunorizzo@outlook.com"><strong>E-mail</strong> brunorizzo@outlook.com</a>
+        <a href="mailto:bruno.rizzo@libbs.com.br"><strong>Corporativo</strong> bruno.rizzo@libbs.com.br</a>
+        <a href="https://www.linkedin.com/in/brunorizzo" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong> /in/brunorizzo</a>
+        <a href="https://www.instagram.com/brunorizzoc/" target="_blank" rel="noopener noreferrer"><strong>Instagram</strong> @brunorizzoc</a>
+      </footer>
+    </section>
+
+    <div class="stage-spacer" aria-hidden="true"></div>
+  </main>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var html = document.documentElement;
+  var themeBtn = document.getElementById('themeBtn');
+
+  function syncThemeLabel() {
+    themeBtn.textContent = html.classList.contains('day') ? 'Tema: Dia' : 'Tema: Noite';
+  }
+  themeBtn.addEventListener('click', function () {
+    html.classList.toggle('day');
+    try { localStorage.setItem('wp_theme', html.classList.contains('day') ? 'day' : 'night'); } catch (e) {}
+    syncThemeLabel();
+  });
+  try {
+    if (localStorage.getItem('wp_theme') === 'day') { html.classList.add('day'); }
+  } catch (e) {}
+  syncThemeLabel();
+
+  /* Relógio em tempo real */
+  var timeEl = document.getElementById('clockTime');
+  var dateEl = document.getElementById('clockDate');
+  function updateClock() {
+    var d = new Date();
+    var hh = String(d.getHours()).padStart(2, '0');
+    var mm = String(d.getMinutes()).padStart(2, '0');
+    timeEl.textContent = hh + ':' + mm;
+    try {
+      dateEl.textContent = new Intl.DateTimeFormat('pt-BR', {
+        weekday: 'long', day: 'numeric', month: 'long'
+      }).format(d);
+    } catch (e) {
+      dateEl.textContent = d.toLocaleDateString('pt-BR');
+    }
+  }
+  updateClock();
+  setInterval(updateClock, 15000);
+
+  /* Fundo WebGL 3D com a letra B + partículas suaves */
+  var cv = document.getElementById('bgCanvas');
+  var gl = cv.getContext('webgl', { alpha: true, antialias: true, premultipliedAlpha: true }) ||
+           cv.getContext('experimental-webgl', { alpha: true, antialias: true, premultipliedAlpha: true });
+  if (!gl) { return; }
+
+  var V = {
+    sub: function (a, b) { return [a[0] - b[0], a[1] - b[1], a[2] - b[2]]; },
+    cross: function (a, b) { return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]; },
+    len: function (a) { return Math.sqrt(a[0] * a[0] + a[1] * a[1] + a[2] * a[2]); },
+    dot: function (a, b) { return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]; },
+    norm: function (a) { var l = V.len(a); return l > 1e-12 ? [a[0] / l, a[1] / l, a[2] / l] : [0, 0, 0]; }
+  };
+  var M = {
+    ident: function () { var o = new Float32Array(16); o[0] = o[5] = o[10] = o[15] = 1; return o; },
+    mul: function (a, b) {
+      var o = new Float32Array(16), c, r, k, s;
+      for (c = 0; c < 4; c++) for (r = 0; r < 4; r++) {
+        s = 0; for (k = 0; k < 4; k++) s += a[k * 4 + r] * b[c * 4 + k];
+        o[c * 4 + r] = s;
+      }
+      return o;
+    },
+    persp: function (fovy, asp, n, f) {
+      var o = new Float32Array(16), t = 1 / Math.tan(fovy / 2), nf = 1 / (n - f);
+      o[0] = t / asp; o[5] = t; o[10] = (f + n) * nf; o[11] = -1; o[14] = 2 * f * n * nf;
+      return o;
+    },
+    lookAt: function (e, c, up) {
+      var o = new Float32Array(16), z = V.norm(V.sub(e, c)), x = V.cross(up, z);
+      if (V.len(x) < 1e-6) x = [1, 0, 0];
+      x = V.norm(x); var y = V.cross(z, x);
+      o[0] = x[0]; o[1] = y[0]; o[2] = z[0]; o[4] = x[1]; o[5] = y[1]; o[6] = z[1];
+      o[8] = x[2]; o[9] = y[2]; o[10] = z[2];
+      o[12] = -V.dot(x, e); o[13] = -V.dot(y, e); o[14] = -V.dot(z, e); o[15] = 1;
+      return o;
+    },
+    rotX: function (a) { var c = Math.cos(a), s = Math.sin(a), o = M.ident(); o[5] = c; o[6] = s; o[9] = -s; o[10] = c; return o; },
+    rotY: function (a) { var c = Math.cos(a), s = Math.sin(a), o = M.ident(); o[0] = c; o[2] = -s; o[8] = s; o[10] = c; return o; },
+    rotZ: function (a) { var c = Math.cos(a), s = Math.sin(a), o = M.ident(); o[0] = c; o[1] = s; o[4] = -s; o[5] = c; return o; },
+    trans: function (x, y, z) { var o = M.ident(); o[12] = x; o[13] = y; o[14] = z; return o; },
+    scale: function (s) { var o = M.ident(); o[0] = o[5] = o[10] = s; return o; },
+    compose: function (t, r, s) {
+      var m = M.trans(t[0], t[1], t[2]);
+      m = M.mul(m, M.rotY(r[1])); m = M.mul(m, M.rotX(r[0])); m = M.mul(m, M.rotZ(r[2]));
+      return M.mul(m, M.scale(s));
+    }
+  };
+  function hex(h) {
+    var n = parseInt(h.slice(1), 16);
+    return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
+  }
+  function mix(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
+
+  var VS = 'attribute vec3 aP; attribute vec3 aN; attribute vec3 aC; uniform mat4 uM; uniform mat4 uVP; varying vec3 vN; varying vec3 vW; varying vec3 vC; void main(){ vec4 w = uM * vec4(aP, 1.0); vW = w.xyz; vN = (uM * vec4(aN, 0.0)).xyz; vC = aC; gl_Position = uVP * w; }';
+  var FS = [
+    'precision mediump float;',
+    'varying vec3 vN; varying vec3 vW; varying vec3 vC;',
+    'uniform vec3 uCam; uniform vec3 uK;',
+    'void main(){',
+    '  vec3 N = normalize(vN); vec3 V = normalize(uCam - vW);',
+    '  if (dot(N, V) < 0.0) N = -N;',
+    '  vec3 L = normalize(uK);',
+    '  float d = max(dot(N, L), 0.0);',
+    '  vec3 H = normalize(L + V);',
+    '  float sp = pow(max(dot(N, H), 0.0), 96.0);',
+    '  float fr = pow(1.0 - max(dot(N, V), 0.0), 3.0);',
+    '  vec3 col = vC * (0.35 + d * 0.85) + vec3(0.95) * sp * 0.9 + mix(vC, vec3(0.8, 1.0, 0.9), 0.4) * fr * 0.55;',
+    '  col = pow(clamp(col, 0.0, 1.0), vec3(1.0 / 2.2));',
+    '  gl_FragColor = vec4(col, 1.0);',
+    '}'
+  ].join('\n');
+
+  var VSP = [
+    'attribute vec3 aP; attribute vec4 aD;',
+    'uniform mat4 uM; uniform mat4 uVP; uniform float uT; uniform float uScale;',
+    'varying vec3 vC; varying float vA;',
+    'void main(){',
+    '  float ph = aD.y * 6.2831;',
+    '  vec3 p = aP + vec3(sin(uT * 0.55 + ph), cos(uT * 0.48 + ph * 1.3), sin(uT * 0.62 + ph * 0.7)) * (0.09 + 0.14 * aD.w);',
+    '  gl_Position = uVP * uM * vec4(p, 1.0);',
+    '  gl_PointSize = clamp(aD.x * uScale / gl_Position.w, 1.0, 48.0);',
+    '  vC = mix(vec3(0.14, 0.75, 0.18), vec3(0.23, 0.51, 0.96), aD.w);',
+    '  vA = aD.z;',
+    '}'
+  ].join('\n');
+  var FSP = 'precision mediump float; varying vec3 vC; varying float vA; void main(){ vec2 d = gl_PointCoord - 0.5; float a = smoothstep(0.5, 0.0, length(d)); a = a * a * vA; if (a < 0.004) discard; gl_FragColor = vec4(vC * a, a); }';
+
+  function compile(t, s) { var sh = gl.createShader(t); gl.shaderSource(sh, s); gl.compileShader(sh); return sh; }
+  function prog(vs, fs, attrs) {
+    var p = gl.createProgram();
+    gl.attachShader(p, compile(gl.VERTEX_SHADER, vs));
+    gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+    attrs.forEach(function (a, i) { gl.bindAttribLocation(p, i, a); });
+    gl.linkProgram(p);
+    var u = {}, n = gl.getProgramParameter(p, gl.ACTIVE_UNIFORMS);
+    for (var i = 0; i < n; i++) { var info = gl.getActiveUniform(p, i); u[info.name] = gl.getUniformLocation(p, info.name); }
+    return { p: p, u: u };
+  }
+  var meshP = prog(VS, FS, ['aP', 'aN', 'aC']);
+  var ptsP = prog(VSP, FSP, ['aP', 'aD']);
+
+  function cubic2(p0, p1, p2, p3, t) {
+    var m = 1 - t;
+    return [
+      m * m * m * p0[0] + 3 * m * m * t * p1[0] + 3 * m * t * t * p2[0] + t * t * t * p3[0],
+      m * m * m * p0[1] + 3 * m * m * t * p1[1] + 3 * m * t * t * p2[1] + t * t * t * p3[1],
+      0
+    ];
+  }
+  var cMint = hex('#AAE3AF'), cGreen = hex('#23C02E'), cDeep = hex('#0E7A2A'), cBlue = hex('#0049FF');
+  var spinePts = [], k;
+  for (k = 0; k <= 72; k++) spinePts.push([-1.28, 2.22 - 4.44 * (k / 72), 0]);
+  var bSegs = [
+    [[-0.95, 2.22], [0.25, 2.22], [1.32, 1.95], [1.32, 1.18]],
+    [[1.32, 1.18], [1.32, 0.42], [0.30, 0.20], [-0.58, 0.20]],
+    [[-0.58, 0.20], [-0.94, 0.20], [-0.94, -0.18], [-0.58, -0.18]],
+    [[-0.58, -0.18], [0.35, -0.18], [1.54, -0.42], [1.54, -1.16]],
+    [[1.54, -1.16], [1.54, -1.96], [0.35, -2.22], [-0.95, -2.22]]
+  ];
+  var bowlsPts = [];
+  bSegs.forEach(function (seg, si) {
+    var steps = si === 2 ? 28 : 48, j;
+    for (j = (si === 0 ? 0 : 1); j <= steps; j++) {
+      var pt = cubic2(seg[0], seg[1], seg[2], seg[3], j / steps);
+      pt[2] = Math.sin((si + j / steps) / bSegs.length * Math.PI) * 0.08;
+      bowlsPts.push(pt);
+    }
+  });
+
+  var gp = [], gn = [], gc = [], gi = [];
+  function addTube(pts, seg, rtMax, colFn) {
+    var base = gp.length / 3, n = pts.length, j, i, e = 0.055;
+    for (j = 0; j < n; j++) {
+      var u = j / (n - 1);
+      var p0 = pts[Math.max(0, j - 1)], p1 = pts[Math.min(n - 1, j + 1)];
+      var T = V.norm(V.sub(p1, p0));
+      var out2d = V.norm([T[1], -T[0], 0]);
+      if (V.len(out2d) < 0.5) out2d = [1, 0, 0];
+      var binorm = V.norm(V.cross(T, out2d));
+      var kk = Math.min(u, 1 - u) / e;
+      var rt = rtMax * (kk >= 1 ? 1 : Math.sqrt(Math.max(0, 1 - (1 - kk) * (1 - kk))));
+      var col = colFn(u);
+      for (i = 0; i <= seg; i++) {
+        var ph = i / seg * Math.PI * 2, cp = Math.cos(ph), sp = Math.sin(ph);
+        var dir = [out2d[0] * cp + binorm[0] * sp, out2d[1] * cp + binorm[1] * sp, out2d[2] * cp + binorm[2] * sp];
+        gp.push(pts[j][0] + dir[0] * rt, pts[j][1] + dir[1] * rt, pts[j][2] + dir[2] * rt);
+        gn.push(dir[0], dir[1], dir[2]);
+        gc.push(Math.pow(col[0], 2.2), Math.pow(col[1], 2.2), Math.pow(col[2], 2.2));
+      }
+    }
+    for (j = 0; j < n - 1; j++) for (i = 0; i < seg; i++) {
+      var A = base + j * (seg + 1) + i, B = A + 1, D = A + seg + 1, C = D + 1;
+      gi.push(A, B, C, A, C, D);
+    }
+  }
+  addTube(spinePts, 20, 0.145, function (u) { return u < 0.5 ? mix(cMint, cGreen, u / 0.5) : mix(cGreen, cDeep, (u - 0.5) / 0.5); });
+  addTube(bowlsPts, 20, 0.145, function (u) {
+    if (u < 0.45) return mix(cMint, cGreen, u / 0.45);
+    if (u < 0.82) return mix(cGreen, cDeep, (u - 0.45) / 0.37);
+    return mix(cDeep, cBlue, (u - 0.82) / 0.18);
+  });
+
+  function buf(arr, type) {
+    var b = gl.createBuffer();
+    gl.bindBuffer(type, b);
+    gl.bufferData(type, type === gl.ELEMENT_ARRAY_BUFFER ? new Uint16Array(arr) : new Float32Array(arr), gl.STATIC_DRAW);
+    return b;
+  }
+  var bP = buf(gp, gl.ARRAY_BUFFER), bN = buf(gn, gl.ARRAY_BUFFER), bC = buf(gc, gl.ARRAY_BUFFER), bI = buf(gi, gl.ELEMENT_ARRAY_BUFFER);
+
+  var rnd = (function (s) { return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; })(77);
+  var N = 1800, pp = [], pd = [];
+  for (k = 0; k < N; k++) {
+    var useSpine = rnd() < 0.28;
+    var src = useSpine ? spinePts : bowlsPts;
+    var bp = src[Math.floor(rnd() * src.length)];
+    var th = rnd() * Math.PI * 2, phi = Math.acos(2 * rnd() - 1), sp = 0.14 + Math.pow(rnd(), 2.0) * 0.9;
+    pp.push(bp[0] + Math.sin(phi) * Math.cos(th) * sp, bp[1] + Math.sin(phi) * Math.sin(th) * sp, bp[2] + Math.cos(phi) * sp);
+    pd.push(0.7 + rnd() * 2.5, rnd(), 0.32 + rnd() * 0.5, useSpine ? rnd() * 0.35 : Math.min(1, 0.2 + rnd() * 0.8));
+  }
+  var pP = buf(pp, gl.ARRAY_BUFFER), pD = buf(pd, gl.ARRAY_BUFFER);
+
+  var mx = 0, my = 0, tx = 0, ty = 0, t0 = performance.now();
+  window.addEventListener('pointermove', function (e) {
+    tx = e.clientX / window.innerWidth * 2 - 1;
+    ty = e.clientY / window.innerHeight * 2 - 1;
+  }, { passive: true });
+
+  function draw() {
+    var w = cv.clientWidth, h = cv.clientHeight, dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+    if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) {
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    }
+    gl.viewport(0, 0, cv.width, cv.height);
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    gl.enable(gl.DEPTH_TEST);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+
+    var t = reduced ? 1.5 : (performance.now() - t0) / 1000;
+    mx += (tx - mx) * 0.04; my += (ty - my) * 0.04;
+    var cam = [mx * 0.65, 0.1 - my * 0.4, 9.4];
+    var vp = M.mul(M.persp(0.62, cv.width / Math.max(1, cv.height), 0.1, 60), M.lookAt(cam, [0, 0, 0], [0, 1, 0]));
+    var wide = w >= 1180;
+    var pos = wide ? [2.85, 0.05, 0] : [0, 0.1, -1.8];
+    var sc = wide ? 0.86 : 0.72;
+    var model = M.compose(pos, [0.18 + my * 0.2 + Math.sin(t * 0.25) * 0.05, -0.34 + mx * 0.35 + Math.sin(t * 0.2) * 0.08, Math.sin(t * 0.22) * 0.035], sc);
+
+    gl.useProgram(meshP.p);
+    gl.uniformMatrix4fv(meshP.u.uM, false, model);
+    gl.uniformMatrix4fv(meshP.u.uVP, false, vp);
+    gl.uniform3fv(meshP.u.uCam, cam);
+    gl.uniform3fv(meshP.u.uK, [-0.4 + mx * 1.1, 0.75 - my * 0.8, 0.8]);
+    gl.bindBuffer(gl.ARRAY_BUFFER, bP); gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, bN); gl.enableVertexAttribArray(1); gl.vertexAttribPointer(1, 3, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, bC); gl.enableVertexAttribArray(2); gl.vertexAttribPointer(2, 3, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, bI);
+    gl.drawElements(gl.TRIANGLES, gi.length, gl.UNSIGNED_SHORT, 0);
+
+    gl.useProgram(ptsP.p);
+    gl.depthMask(false);
+    gl.disableVertexAttribArray(2);
+    gl.uniformMatrix4fv(ptsP.u.uM, false, model);
+    gl.uniformMatrix4fv(ptsP.u.uVP, false, vp);
+    gl.uniform1f(ptsP.u.uT, t);
+    gl.uniform1f(ptsP.u.uScale, cv.height / (2 * Math.tan(0.62 / 2)) * 0.042);
+    gl.bindBuffer(gl.ARRAY_BUFFER, pP); gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, pD); gl.enableVertexAttribArray(1); gl.vertexAttribPointer(1, 4, gl.FLOAT, false, 0, 0);
+    gl.drawArrays(gl.POINTS, 0, N);
+    gl.depthMask(true);
+
+    if (!reduced) requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
