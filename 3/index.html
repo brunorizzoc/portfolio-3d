@@ -321,9 +321,10 @@ html.day .contacts a:hover{color:#0E7A2A}
   right:18px;
   z-index:20;
   display:flex;
-  align-items:center;
+  flex-direction:column;
+  align-items:flex-end;
   gap:6px;
-  opacity:.28;
+  opacity:.32;
   transition:opacity .25s;
 }
 .wp-tools:hover,.wp-tools:focus-within{opacity:1}
@@ -348,21 +349,148 @@ html.day .contacts a:hover{color:#0E7A2A}
   pointer-events:none;
 }
 
+/* Layout variants built on the same base */
+html[data-layout="invertido"] .wallpaper{
+  background:
+    radial-gradient(56% 68% at 22% 46%,rgba(35,192,46,.16) 0%,rgba(0,73,255,.10) 44%,transparent 74%),
+    radial-gradient(45% 55% at 82% 85%,rgba(0,73,255,.12) 0%,transparent 70%),
+    linear-gradient(135deg,var(--bg-0) 0%,var(--bg-1) 100%);
+}
+html.day[data-layout="invertido"] .wallpaper{
+  background:
+    radial-gradient(56% 68% at 22% 46%,rgba(35,192,46,.22) 0%,rgba(100,144,246,.16) 44%,transparent 74%),
+    radial-gradient(45% 55% at 82% 85%,rgba(100,144,246,.15) 0%,transparent 70%),
+    linear-gradient(135deg,#F6FBF8 0%,#E5F3EA 100%);
+}
+html[data-layout="invertido"] .shell{
+  grid-template-columns:minmax(380px,.88fr) minmax(520px,1.12fr);
+  padding:clamp(22px,3vh,38px) clamp(76px,6.5vw,116px) clamp(46px,5.8vh,64px) clamp(24px,3vw,46px);
+}
+html[data-layout="invertido"] .stage-spacer{order:1}
+html[data-layout="invertido"] .board{order:2}
+
+html[data-layout="panorama"] .wallpaper{
+  background:
+    radial-gradient(56% 52% at 50% 30%,rgba(35,192,46,.18) 0%,rgba(0,73,255,.11) 46%,transparent 76%),
+    radial-gradient(45% 45% at 15% 85%,rgba(0,73,255,.10) 0%,transparent 70%),
+    linear-gradient(135deg,var(--bg-0) 0%,var(--bg-1) 100%);
+}
+html.day[data-layout="panorama"] .wallpaper{
+  background:
+    radial-gradient(56% 52% at 50% 30%,rgba(35,192,46,.22) 0%,rgba(100,144,246,.16) 46%,transparent 76%),
+    radial-gradient(45% 45% at 15% 85%,rgba(100,144,246,.14) 0%,transparent 70%),
+    linear-gradient(135deg,#F6FBF8 0%,#E5F3EA 100%);
+}
+html[data-layout="panorama"] .shell{
+  grid-template-columns:1fr;
+  grid-template-rows:minmax(220px,1fr) auto;
+  align-items:stretch;
+  gap:clamp(12px,1.6vh,22px);
+  padding:clamp(18px,2.2vh,28px) clamp(40px,4vw,76px) clamp(50px,6vh,68px);
+}
+html[data-layout="panorama"] .stage-spacer{order:1;min-height:220px}
+html[data-layout="panorama"] .board{
+  order:2;
+  gap:clamp(10px,1.2vh,14px);
+  padding:clamp(16px,2vh,22px) clamp(22px,2.4vw,32px);
+  max-height:none;
+}
+html[data-layout="panorama"] .id-row{padding-bottom:10px}
+html[data-layout="panorama"] .mid-grid{
+  grid-template-columns:0.56fr 1.44fr;
+  gap:clamp(18px,2vw,28px);
+  padding-bottom:10px;
+}
+html[data-layout="panorama"] .roles{gap:5px}
+html[data-layout="panorama"] .pillars{
+  grid-template-columns:repeat(3,1fr);
+  gap:10px 18px;
+  align-content:start;
+}
+html[data-layout="panorama"] .pillars > .sec-title{
+  grid-column:1 / -1;
+  margin-bottom:2px;
+}
+
+html[data-layout="compacto"] .shell{
+  grid-template-columns:minmax(380px,450px) 1fr;
+}
+html[data-layout="compacto"] .board{
+  gap:12px;
+  padding:clamp(18px,2.4vh,26px) clamp(20px,2vw,26px);
+}
+html[data-layout="compacto"] .id-row{
+  flex-direction:column;
+  align-items:stretch;
+  gap:12px;
+  padding-bottom:12px;
+}
+html[data-layout="compacto"] .clock-box{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-rows:auto auto;
+  align-items:center;
+  column-gap:12px;
+  padding-top:10px;
+  border-top:1px solid var(--border-soft);
+}
+html[data-layout="compacto"] .clock-logo{
+  grid-column:1;
+  grid-row:1 / span 2;
+  margin-bottom:0;
+}
+html[data-layout="compacto"] .clock-time,
+html[data-layout="compacto"] .clock-date{
+  grid-column:2;
+  justify-self:end;
+  text-align:right;
+}
+html[data-layout="compacto"] .mid-grid{
+  grid-template-columns:1fr;
+  gap:12px;
+  padding-bottom:12px;
+}
+html[data-layout="compacto"] .pillars{
+  border-left:0;
+  padding-left:0;
+  border-top:1px solid var(--border-soft);
+  padding-top:12px;
+  gap:8px;
+}
+html[data-layout="compacto"] .pillar p{display:none}
+html[data-layout="compacto"] .contacts{gap:6px 14px;font-size:12px}
+
 @media (max-width:1180px){
   html,body{overflow:auto;height:auto;min-height:100%}
   .wallpaper{height:auto;min-height:100vh}
-  .shell{
+  .shell,
+  html[data-layout] .shell{
     grid-template-columns:1fr;
+    grid-template-rows:auto;
     padding:64px 20px 40px;
   }
-  .board{max-height:none}
-  .mid-grid{grid-template-columns:1fr}
-  .pillars{border-left:0;padding-left:0;border-top:1px solid var(--border-soft);padding-top:14px}
+  .board,
+  html[data-layout] .board{max-height:none;order:1}
+  .mid-grid,
+  html[data-layout] .mid-grid{grid-template-columns:1fr}
+  .pillars,
+  html[data-layout] .pillars{
+    grid-template-columns:1fr;
+    border-left:0;
+    padding-left:0;
+    border-top:1px solid var(--border-soft);
+    padding-top:14px;
+  }
+  html[data-layout="compacto"] .pillar p{display:block}
   .stage-spacer{display:none}
 }
 @media (max-width:640px){
   .id-row{flex-direction:column;align-items:flex-start}
   .clock-box{align-items:flex-start;text-align:left}
+  html[data-layout="compacto"] .clock-box{display:flex;flex-direction:column;align-items:flex-start;border-top:0;padding-top:0}
+  html[data-layout="compacto"] .clock-logo{margin-bottom:8px}
+  html[data-layout="compacto"] .clock-time,
+  html[data-layout="compacto"] .clock-date{text-align:left}
 }
 </style>
 </head>
@@ -370,8 +498,9 @@ html.day .contacts a:hover{color:#0E7A2A}
 <div class="wallpaper">
   <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
-  <div class="wp-tools" aria-label="Controle de tema">
+  <div class="wp-tools" aria-label="Controles do wallpaper">
     <button class="wp-btn" id="themeBtn" type="button">Tema: Noite</button>
+    <button class="wp-btn" id="layoutBtn" type="button">Layout: Clássico</button>
   </div>
 
   <main class="shell">
@@ -379,7 +508,7 @@ html.day .contacts a:hover{color:#0E7A2A}
       <header class="id-row">
         <div class="id-left">
           <div class="avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHoxAM4qAH1vg/profile-displayphoto-scale_400_400/B4DZjFFsOIH4Ag-/0/1755653261748?e=1797465600&v=beta&t=bTyUtDwU8rU2kEk-Ld6XqP1_FCURiwF39pwvonB37ec" alt="Bruno Rizzo" referrerpolicy="no-referrer" onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='/skills-profile-picture.png';}else{this.hidden=true;this.nextElementSibling.hidden=false;}">
+            <img src="/rzz.jpg" alt="Bruno Rizzo" onerror="this.hidden=true;this.nextElementSibling.hidden=false;">
             <span class="avatar-fb" hidden>BR</span>
           </div>
           <div class="id-text">
@@ -443,6 +572,7 @@ html.day .contacts a:hover{color:#0E7A2A}
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var html = document.documentElement;
   var themeBtn = document.getElementById('themeBtn');
+  var layoutBtn = document.getElementById('layoutBtn');
 
   function syncThemeLabel() {
     themeBtn.textContent = html.classList.contains('day') ? 'Tema: Dia' : 'Tema: Noite';
@@ -456,6 +586,33 @@ html.day .contacts a:hover{color:#0E7A2A}
     if (localStorage.getItem('wp_theme') === 'day') { html.classList.add('day'); }
   } catch (e) {}
   syncThemeLabel();
+
+  var layouts = [
+    { id: 'classic', label: 'Clássico' },
+    { id: 'invertido', label: 'Invertido' },
+    { id: 'panorama', label: 'Panorama' },
+    { id: 'compacto', label: 'Compacto' }
+  ];
+  var layoutIndex = 0;
+  function applyLayout(idx, save) {
+    layoutIndex = ((idx % layouts.length) + layouts.length) % layouts.length;
+    var item = layouts[layoutIndex];
+    html.setAttribute('data-layout', item.id);
+    layoutBtn.textContent = 'Layout: ' + item.label;
+    if (save) {
+      try { localStorage.setItem('wp_layout', item.id); } catch (e) {}
+    }
+  }
+  layoutBtn.addEventListener('click', function () {
+    applyLayout(layoutIndex + 1, true);
+  });
+  try {
+    var savedLayout = localStorage.getItem('wp_layout');
+    var found = layouts.findIndex(function (l) { return l.id === savedLayout; });
+    applyLayout(found >= 0 ? found : 0, false);
+  } catch (e) {
+    applyLayout(0, false);
+  }
 
   /* Relógio em tempo real */
   var hmEl = document.getElementById('clockHm');
@@ -697,15 +854,17 @@ html.day .contacts a:hover{color:#0E7A2A}
     var halfH = 9.4 * Math.tan(0.62 / 2);
     var halfW = halfH * asp;
     var spacer = document.querySelector('.stage-spacer');
-    var wide = w >= 1180 && spacer && spacer.offsetWidth > 120;
+    var wide = w >= 1180 && spacer && spacer.offsetWidth > 120 && spacer.offsetHeight > 120;
     var pos = [0, 0.1, -1.8], sc = 0.72;
     if (wide) {
       var sr = spacer.getBoundingClientRect();
-      var ndcX = ((sr.left + sr.width * 0.52) / Math.max(1, w)) * 2 - 1;
+      var curLayout = html.getAttribute('data-layout') || 'classic';
+      var xWeight = curLayout === 'panorama' ? 0.50 : (curLayout === 'invertido' ? 0.48 : 0.52);
+      var ndcX = ((sr.left + sr.width * xWeight) / Math.max(1, w)) * 2 - 1;
       var ndcY = 1 - ((sr.top + sr.height * 0.5) / Math.max(1, h)) * 2;
       var sw = (sr.width / Math.max(1, w)) * (2 * halfW);
       var sh = (sr.height / Math.max(1, h)) * (2 * halfH);
-      sc = Math.min(0.86, (sw * 0.76) / 3.15, (sh * 0.80) / 4.72);
+      sc = Math.min(0.86, (sw * 0.76) / 3.15, (sh * 0.82) / 4.72);
       pos = [ndcX * halfW - 0.13 * sc, ndcY * halfH, 0];
     }
     var model = M.compose(pos, [0.16 + my * 0.2 + Math.sin(t * 0.25) * 0.05, -0.30 + mx * 0.35 + Math.sin(t * 0.2) * 0.08, Math.sin(t * 0.22) * 0.035], sc);
