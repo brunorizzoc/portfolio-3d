@@ -38596,18 +38596,27 @@ class Ln {
       this.initEvent();
   }
   initEvent() {
+    if (!this.element) return;
     let e = this.getY(this.element) + this.offset;
     this.direction == "up" && (e += window.innerHeight),
       this.scroll.addEvent(e, this.direction, this.f, this.repeats);
   }
   getY(e) {
+    if (!e) return 0;
+    let sc = document.getElementById("scroll-container");
+    if (sc && e.getBoundingClientRect && sc.getBoundingClientRect) {
+      const eRect = e.getBoundingClientRect();
+      const scRect = sc.getBoundingClientRect();
+      return eRect.top - scRect.top - window.innerHeight;
+    }
     let t = 0;
-    t += e.offsetTop;
-    let n = e.offsetParent.id,
-      i = e;
-    for (; n != "scroll-container"; )
-      (i = i.offsetParent), (n = i.offsetParent.id), (t += i.offsetTop);
-    return t - e.scrollTop + e.clientTop - window.innerHeight;
+    t += e.offsetTop || 0;
+    let i = e;
+    while (i && i.offsetParent && i.offsetParent.id !== "scroll-container") {
+      i = i.offsetParent;
+      t += i.offsetTop || 0;
+    }
+    return t - (e.scrollTop || 0) + (e.clientTop || 0) - window.innerHeight;
   }
 }
 class mM {
@@ -39234,15 +39243,18 @@ class yM {
     }
   }
   addSubmitButtonEventListener() {
-    this.domElements.submitButton.addEventListener("click", () => {
-      this.sounds.play("buttonClick"),
-        this.hideAllErrors(),
-        this.checkNameInput();
-    });
+    this.domElements.submitButton &&
+      this.domElements.submitButton.addEventListener("click", () => {
+        this.sounds.play("buttonClick"),
+          this.hideAllErrors(),
+          this.checkNameInput();
+      });
   }
   addHideErrorEventListeners() {
     this.fields.forEach((e) => {
-      e.container.addEventListener("focusin", () => this.hideError(e)),
+      e && e.container &&
+        e.container.addEventListener("focusin", () => this.hideError(e)),
+      e && e.input &&
         e.input.addEventListener("input", () => this.hideError(e));
     });
   }
@@ -39321,12 +39333,14 @@ class yM {
       t == 2 ? this.showSuccessIcon() : this.showErrorIcon();
   }
   addResultButtonEventListener() {
-    this.domElements.resultButton.addEventListener("click", () => {
-      this.sounds.play("buttonClick"),
-        this.showContainer("form"),
-        this.domElements.errorLines[0].classList.contains("hide") &&
-          this.clearInputs();
-    });
+    this.domElements.resultButton &&
+      this.domElements.resultButton.addEventListener("click", () => {
+        this.sounds.play("buttonClick"),
+          this.showContainer("form"),
+          this.domElements.errorLines[0] &&
+            this.domElements.errorLines[0].classList.contains("hide") &&
+            this.clearInputs();
+      });
   }
   showSuccessIcon() {
     this.domElements.successLine.classList.remove("hide"),
