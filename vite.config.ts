@@ -2,35 +2,43 @@ import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 import {defineConfig, type Plugin} from 'vite';
 
-function routeV2Plugin(): Plugin {
-  const rewriteV2 = (
+function routePortfolioPlugin(): Plugin {
+  const rewriteRoutes = (
     req: {url?: string},
-    _res: unknown,
+    res: {writeHead: (status: number, headers: Record<string, string>) => void; end: () => void},
     next: () => void,
   ) => {
     if (req.url) {
       const [pathname, search] = req.url.split('?');
-      if (pathname === '/2' || pathname === '/2/') {
-        req.url = '/2/index.html' + (search ? `?${search}` : '');
+      const qs = search ? `?${search}` : '';
+      if (pathname === '/3d/') {
+        res.writeHead(302, {Location: '/3d' + qs});
+        res.end();
+        return;
+      }
+      if (pathname === '/3d') {
+        req.url = '/3d/index.html' + qs;
+      } else if (pathname === '/2' || pathname === '/2/') {
+        req.url = '/index.html' + qs;
       }
     }
     next();
   };
 
   return {
-    name: 'route-v2-subpage',
+    name: 'route-portfolio-subpages',
     configureServer(server) {
-      server.middlewares.use(rewriteV2);
+      server.middlewares.use(rewriteRoutes);
     },
     configurePreviewServer(server) {
-      server.middlewares.use(rewriteV2);
+      server.middlewares.use(rewriteRoutes);
     },
   };
 }
 
 export default defineConfig(() => {
   return {
-    plugins: [tailwindcss(), routeV2Plugin()],
+    plugins: [tailwindcss(), routePortfolioPlugin()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
@@ -40,7 +48,7 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'index.html'),
-          v2: path.resolve(__dirname, '2/index.html'),
+          v3d: path.resolve(__dirname, '3d/index.html'),
         },
       },
     },
@@ -54,4 +62,3 @@ export default defineConfig(() => {
     },
   };
 });
-

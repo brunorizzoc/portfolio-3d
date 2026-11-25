@@ -37636,7 +37636,7 @@ const oM = [
       id: 2,
       name: "Líderes aprendem todos os dias",
       description: "+ de 2 décadas em TI (Libbs), vivendo Sistemas Corporativos, Governança, gestão de aplicações e liderança de equipes.",
-      image: "https://media.licdn.com/dms/image/v2/D4D03AQHoxAM4qAH1vg/profile-displayphoto-scale_400_400/B4DZjFFsOIH4Ag-/0/1755653261748?e=1795046400&v=beta&t=vtthmK8v9N_U-B6La9UpodWuQB5A7ubIrKgowMpoJ38",
+      image: "https://cdn-icons-png.flaticon.com/512/4139/4139981.png",
       tags: [],
       liveview: "https://lnkd.in/p/dutKfMrw",
       alt: "",
