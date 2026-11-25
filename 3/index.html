@@ -86,14 +86,15 @@ html.day .wallpaper{
   z-index:2;
   width:100%;
   height:100%;
-  padding:clamp(24px,3.2vh,40px) clamp(28px,3.4vw,52px) clamp(48px,6.2vh,68px) clamp(96px,8.5vw,148px);
+  padding:clamp(22px,3vh,38px) clamp(24px,3vw,46px) clamp(46px,5.8vh,64px) clamp(76px,6.5vw,116px);
   display:grid;
-  grid-template-columns:minmax(580px,1.28fr) minmax(320px,.72fr);
-  gap:clamp(24px,3vw,48px);
+  grid-template-columns:minmax(520px,1.12fr) minmax(380px,.88fr);
+  gap:clamp(20px,2.4vw,40px);
   align-items:center;
 }
 
 .board{
+  min-width:0;
   display:flex;
   flex-direction:column;
   gap:clamp(14px,1.8vh,20px);
@@ -183,9 +184,19 @@ html.day .name{
 }
 
 .clock-box{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
   text-align:right;
   flex:none;
   font-variant-numeric:tabular-nums;
+}
+.clock-logo{
+  height:clamp(26px,2.8vh,34px);
+  width:auto;
+  display:block;
+  margin-bottom:8px;
+  object-fit:contain;
 }
 .clock-time{
   font-family:var(--font-d);
@@ -194,6 +205,13 @@ html.day .name{
   line-height:1;
   letter-spacing:-.03em;
   color:var(--text);
+  white-space:nowrap;
+}
+.clock-sec{
+  font-size:.62em;
+  font-weight:600;
+  color:var(--text-2);
+  margin-left:2px;
 }
 .clock-date{
   margin-top:4px;
@@ -273,52 +291,6 @@ html.day .sec-title{color:#0E7A2A}
   color:var(--text-2);
 }
 
-/* Publications strip */
-.pubs-wrap{
-  padding-bottom:clamp(10px,1.3vh,14px);
-  border-bottom:1px solid var(--border-soft);
-}
-.pubs{
-  display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:10px;
-}
-.pub{
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-  padding:10px 11px;
-  border-radius:12px;
-  background:var(--surface-2);
-  border:1px solid var(--border-soft);
-  transition:border-color .2s,background .2s,transform .2s;
-}
-.pub:hover{
-  border-color:rgba(35,192,46,.45);
-  background:rgba(35,192,46,.08);
-  transform:translateY(-1px);
-}
-.pub b{
-  font-family:var(--font-d);
-  font-size:12.5px;
-  line-height:1.25;
-  color:var(--text);
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-}
-.pub span{
-  font-size:11px;
-  line-height:1.35;
-  color:var(--text-3);
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-  margin-top:auto;
-}
-
 /* Contacts bottom strip */
 .contacts{
   display:flex;
@@ -386,16 +358,11 @@ html.day .contacts a:hover{color:#0E7A2A}
   .board{max-height:none}
   .mid-grid{grid-template-columns:1fr}
   .pillars{border-left:0;padding-left:0;border-top:1px solid var(--border-soft);padding-top:14px}
-  .pubs{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stage-spacer{display:none}
 }
 @media (max-width:640px){
   .id-row{flex-direction:column;align-items:flex-start}
-  .clock-box{text-align:left}
-  .pubs{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion:reduce){
-  .pub{transition:none}
+  .clock-box{align-items:flex-start;text-align:left}
 }
 </style>
 </head>
@@ -403,10 +370,8 @@ html.day .contacts a:hover{color:#0E7A2A}
 <div class="wallpaper">
   <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
-  <div class="wp-tools" aria-label="Controles rápidos">
+  <div class="wp-tools" aria-label="Controle de tema">
     <button class="wp-btn" id="themeBtn" type="button">Tema: Noite</button>
-    <a class="wp-btn" href="/">Portfólio</a>
-    <a class="wp-btn" href="/3d">Versão 3D</a>
   </div>
 
   <main class="shell">
@@ -424,7 +389,8 @@ html.day .contacts a:hover{color:#0E7A2A}
           </div>
         </div>
         <div class="clock-box" aria-live="off">
-          <div class="clock-time" id="clockTime">--:--</div>
+          <img class="clock-logo" src="/logolibbbsss.png" alt="Libbs">
+          <div class="clock-time" id="clockTime"><span id="clockHm">--:--</span><span class="clock-sec" id="clockSec">:--</span></div>
           <div class="clock-date" id="clockDate">--</div>
         </div>
       </header>
@@ -455,32 +421,6 @@ html.day .contacts a:hover{color:#0E7A2A}
             <h3>Inovação, IA e Produtos Digitais</h3>
             <p>Incentivo soluções IA, produtos digitais e apps com foco em experimentação e evolução.</p>
           </div>
-        </div>
-      </div>
-
-      <div class="pubs-wrap">
-        <h2 class="sec-title">Ciclo de Vida · Publicações no LinkedIn</h2>
-        <div class="pubs">
-          <a class="pub" href="https://www.linkedin.com/pulse/espelho-profissional-ia-bruno-rizzo-rfakf/" target="_blank" rel="noopener noreferrer">
-            <b>Espelho profissional</b>
-            <span>Prompt IA para histórico profissional</span>
-          </a>
-          <a class="pub" href="https://www.linkedin.com/pulse/roi-o-problema-raramente-est%C3%A1-n%C3%BAmero-bruno-rizzo-euvsf/" target="_blank" rel="noopener noreferrer">
-            <b>ROI, custos e benefícios</b>
-            <span>Qualidade da discussão executiva</span>
-          </a>
-          <a class="pub" href="https://lnkd.in/p/dutKfMrw" target="_blank" rel="noopener noreferrer">
-            <b>Líderes aprendem todos os dias!</b>
-            <span>+2 décadas em TI e Governança</span>
-          </a>
-          <a class="pub" href="https://www.linkedin.com/pulse/ia-n%C3%A3o-resolve-caos-framework-para-gerar-mvps-de-verdade-bruno-rizzo-zwngf/" target="_blank" rel="noopener noreferrer">
-            <b>IA Não Resolve Caos</b>
-            <span>Framework para MVPs de verdade</span>
-          </a>
-          <a class="pub" href="https://www.linkedin.com/pulse/minha-jornada-com-genia-na-libbs-bruno-rizzo-ebmvf/" target="_blank" rel="noopener noreferrer">
-            <b>De IA para Líder</b>
-            <span>Jornada com GenIA de 2024 a hoje</span>
-          </a>
         </div>
       </div>
 
@@ -518,23 +458,35 @@ html.day .contacts a:hover{color:#0E7A2A}
   syncThemeLabel();
 
   /* Relógio em tempo real */
-  var timeEl = document.getElementById('clockTime');
+  var hmEl = document.getElementById('clockHm');
+  var secEl = document.getElementById('clockSec');
   var dateEl = document.getElementById('clockDate');
+  var lastSec = -1;
+  var lastDay = '';
   function updateClock() {
     var d = new Date();
+    var sec = d.getSeconds();
+    if (sec === lastSec) { return; }
+    lastSec = sec;
     var hh = String(d.getHours()).padStart(2, '0');
     var mm = String(d.getMinutes()).padStart(2, '0');
-    timeEl.textContent = hh + ':' + mm;
-    try {
-      dateEl.textContent = new Intl.DateTimeFormat('pt-BR', {
-        weekday: 'long', day: 'numeric', month: 'long'
-      }).format(d);
-    } catch (e) {
-      dateEl.textContent = d.toLocaleDateString('pt-BR');
+    var ss = String(sec).padStart(2, '0');
+    hmEl.textContent = hh + ':' + mm;
+    secEl.textContent = ':' + ss;
+    var dayKey = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
+    if (dayKey !== lastDay) {
+      lastDay = dayKey;
+      try {
+        dateEl.textContent = new Intl.DateTimeFormat('pt-BR', {
+          weekday: 'long', day: 'numeric', month: 'long'
+        }).format(d);
+      } catch (e) {
+        dateEl.textContent = d.toLocaleDateString('pt-BR');
+      }
     }
   }
   updateClock();
-  setInterval(updateClock, 15000);
+  setInterval(updateClock, 250);
 
   /* Fundo WebGL 3D com a letra B + partículas suaves */
   var cv = document.getElementById('bgCanvas');
@@ -739,12 +691,24 @@ html.day .contacts a:hover{color:#0E7A2A}
 
     var t = reduced ? 1.5 : (performance.now() - t0) / 1000;
     mx += (tx - mx) * 0.04; my += (ty - my) * 0.04;
-    var cam = [mx * 0.65, 0.1 - my * 0.4, 9.4];
-    var vp = M.mul(M.persp(0.62, cv.width / Math.max(1, cv.height), 0.1, 60), M.lookAt(cam, [0, 0, 0], [0, 1, 0]));
-    var wide = w >= 1180;
-    var pos = wide ? [2.85, 0.05, 0] : [0, 0.1, -1.8];
-    var sc = wide ? 0.86 : 0.72;
-    var model = M.compose(pos, [0.18 + my * 0.2 + Math.sin(t * 0.25) * 0.05, -0.34 + mx * 0.35 + Math.sin(t * 0.2) * 0.08, Math.sin(t * 0.22) * 0.035], sc);
+    var cam = [mx * 0.45, 0.08 - my * 0.3, 9.4];
+    var asp = cv.width / Math.max(1, cv.height);
+    var vp = M.mul(M.persp(0.62, asp, 0.1, 60), M.lookAt(cam, [0, 0, 0], [0, 1, 0]));
+    var halfH = 9.4 * Math.tan(0.62 / 2);
+    var halfW = halfH * asp;
+    var spacer = document.querySelector('.stage-spacer');
+    var wide = w >= 1180 && spacer && spacer.offsetWidth > 120;
+    var pos = [0, 0.1, -1.8], sc = 0.72;
+    if (wide) {
+      var sr = spacer.getBoundingClientRect();
+      var ndcX = ((sr.left + sr.width * 0.52) / Math.max(1, w)) * 2 - 1;
+      var ndcY = 1 - ((sr.top + sr.height * 0.5) / Math.max(1, h)) * 2;
+      var sw = (sr.width / Math.max(1, w)) * (2 * halfW);
+      var sh = (sr.height / Math.max(1, h)) * (2 * halfH);
+      sc = Math.min(0.86, (sw * 0.76) / 3.15, (sh * 0.80) / 4.72);
+      pos = [ndcX * halfW - 0.13 * sc, ndcY * halfH, 0];
+    }
+    var model = M.compose(pos, [0.16 + my * 0.2 + Math.sin(t * 0.25) * 0.05, -0.30 + mx * 0.35 + Math.sin(t * 0.2) * 0.08, Math.sin(t * 0.22) * 0.035], sc);
 
     gl.useProgram(meshP.p);
     gl.uniformMatrix4fv(meshP.u.uM, false, model);
