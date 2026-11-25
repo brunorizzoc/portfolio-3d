@@ -59,8 +59,11 @@ button{cursor:pointer}
 .topbar.on-dark{color:#fff}
 .topbar.on-dark.scrolled{background:rgba(6,18,25,.72);box-shadow:0 1px 0 rgba(255,255,255,.08);color:#fff}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;flex:none;padding:6px 12px;border-radius:14px;font-family:var(--font-d);font-weight:750;font-size:17px;letter-spacing:-.02em;white-space:nowrap;transition:background .3s}
-.brand svg{width:28px;height:30px;flex:none}
+.brand svg{width:28px;height:30px;flex:none;color:var(--green-ink)}
+.brand span{background:linear-gradient(95deg,#0E7A2A 0%,#16A832 36%,#0049FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .topbar.on-dark .brand{color:#fff}
+.topbar.on-dark .brand svg{color:var(--mint-3)}
+.topbar.on-dark .brand span{background:linear-gradient(95deg,#87D78A 0%,#38BDF8 55%,#6490F6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .nav{display:flex;gap:4px;margin-inline:auto;padding:5px;border-radius:999px;background:rgba(255,255,255,.6);border:1px solid rgba(16,34,44,.06)}
 .topbar.on-dark .nav{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12)}
 .nav a{font-size:13.5px;font-weight:600;text-decoration:none;padding:8px 14px;border-radius:999px;color:inherit;opacity:.8;transition:background .25s,opacity .25s,color .25s;white-space:nowrap}
@@ -126,7 +129,7 @@ h2{font-size:clamp(30px,4.2vw,52px);line-height:1.06;font-weight:700;text-wrap:b
 .hero-kicker .sep{opacity:.45}
 .hero h1{font-size:clamp(40px,5vw,70px);line-height:1.0;font-weight:750;letter-spacing:-.035em}
 .hero h1 span{display:block}
-.hero h1 .grad{background:linear-gradient(100deg,#0E7A2A 0%,#1BA62A 45%,#1F7FD6 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.hero h1 .grad{display:inline-block;width:fit-content;background:linear-gradient(95deg,#18B534 0%,#0E9F6E 45%,#0049FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
 .hero .lead{font-size:clamp(17px,1.45vw,21px);color:var(--ink-2);max-width:560px;margin:20px 0 30px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
 .hero-facts{list-style:none;display:flex;flex-wrap:wrap;gap:32px;margin:38px 0 0;padding:0;color:var(--ink-2);font-size:14px}
