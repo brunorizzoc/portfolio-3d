@@ -47,9 +47,9 @@ Itens principais de navegação / âncoras de seção:
 ### 4.2 Papéis e Competências (Barras de Ênfase / Indicadores)
 - **Título da subseção:** `PAPÉIS`
 - **Lista de competências (com níveis visuais):**
-  1. **Coordenação** — `90%`
-  2. **Alinhamento** — `55%`
-  3. **Resultados** — `90%`
+  1. **Coordenação** — `93%`
+  2. **Alinhamento** — `67%`
+  3. **Resultados** — `91%`
   4. **Processos** — `80%`
   5. **Diretorias** — `75%`
 
