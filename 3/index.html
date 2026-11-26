@@ -258,16 +258,72 @@ html.day .sec-title{color:#0E7A2A}
   color:var(--text-2);
 }
 .bar{
-  height:5px;
+  position:relative;
+  height:6px;
   border-radius:999px;
   background:var(--surface-2);
-  overflow:hidden;
+  overflow:visible;
 }
-.bar i{
+.bar-fill{
+  position:relative;
+  height:100%;
+  width:var(--pct,0%);
+  border-radius:999px;
+}
+.bar-core{
+  position:relative;
   display:block;
+  width:100%;
   height:100%;
   border-radius:999px;
-  background:linear-gradient(90deg,#23C02E 0%,#10B981 55%,#3B82F6 100%);
+  overflow:hidden;
+  transform-origin:left center;
+  background:linear-gradient(90deg,#1EA834 0%,#10B981 48%,#2563EB 86%,#60A5FA 100%);
+  box-shadow:0 0 12px -2px rgba(35,192,46,.32);
+  animation:barBreathe 5.2s ease-in-out calc(var(--i,0) * 420ms + 1.2s) infinite;
+}
+.bar-core::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  width:42%;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.15) 35%,rgba(255,255,255,.82) 52%,rgba(147,197,253,.38) 70%,transparent 100%);
+  transform:translateX(-160%) skewX(-24deg);
+  animation:barSweep 5.2s cubic-bezier(.4,0,.2,1) calc(var(--i,0) * 420ms + 1.2s) infinite;
+}
+.bar-tip{
+  position:absolute;
+  top:50%;
+  right:0;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#BAE6FD;
+  box-shadow:0 0 8px 2px rgba(96,165,250,.85),0 0 14px 2px rgba(35,192,46,.45);
+  transform:translate(50%,-50%) scale(.8);
+  opacity:.7;
+  pointer-events:none;
+  animation:tipPulse 5.2s ease-in-out calc(var(--i,0) * 420ms + 1.2s) infinite;
+}
+@keyframes barBreathe{
+  0%,100%{transform:scaleX(1);filter:brightness(1)}
+  28%{transform:scaleX(1.018);filter:brightness(1.16)}
+  62%{transform:scaleX(.988);filter:brightness(.97)}
+}
+@keyframes barSweep{
+  0%{transform:translateX(-160%) skewX(-24deg);opacity:0}
+  10%{opacity:1}
+  44%{transform:translateX(350%) skewX(-24deg);opacity:.92}
+  48%,100%{transform:translateX(350%) skewX(-24deg);opacity:0}
+}
+@keyframes tipPulse{
+  0%,100%{opacity:.6;transform:translate(50%,-50%) scale(.78)}
+  34%{opacity:1;transform:translate(50%,-50%) scale(1.22)}
+  66%{opacity:.72;transform:translate(50%,-50%) scale(.86)}
+}
+@media (prefers-reduced-motion:reduce){
+  .bar-core,.bar-core::before,.bar-tip{animation:none}
+  .bar-core::before{opacity:0}
 }
 
 /* Pillars */
@@ -314,194 +370,33 @@ html.day .contacts a:hover{color:#0E7A2A}
   color:var(--text);
 }
 
-/* Subtle top-right browser utility (quiet on desktop wallpaper) */
-.wp-tools{
-  position:fixed;
-  top:14px;
-  right:18px;
-  z-index:20;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  gap:6px;
-  opacity:.32;
-  transition:opacity .25s;
-}
-.wp-tools:hover,.wp-tools:focus-within{opacity:1}
-.wp-btn{
-  height:30px;
-  padding:0 11px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:var(--surface);
-  backdrop-filter:blur(10px);
-  font-size:11.5px;
-  font-weight:600;
-  display:inline-flex;
-  align-items:center;
-  white-space:nowrap;
-}
-.wp-btn:hover{border-color:rgba(35,192,46,.5)}
-
 /* Right hero space reserved visually for WebGL 3D Letter B */
 .stage-spacer{
   height:100%;
   pointer-events:none;
 }
 
-/* Layout variants built on the same base */
-html[data-layout="invertido"] .wallpaper{
-  background:
-    radial-gradient(56% 68% at 22% 46%,rgba(35,192,46,.16) 0%,rgba(0,73,255,.10) 44%,transparent 74%),
-    radial-gradient(45% 55% at 82% 85%,rgba(0,73,255,.12) 0%,transparent 70%),
-    linear-gradient(135deg,var(--bg-0) 0%,var(--bg-1) 100%);
-}
-html.day[data-layout="invertido"] .wallpaper{
-  background:
-    radial-gradient(56% 68% at 22% 46%,rgba(35,192,46,.22) 0%,rgba(100,144,246,.16) 44%,transparent 74%),
-    radial-gradient(45% 55% at 82% 85%,rgba(100,144,246,.15) 0%,transparent 70%),
-    linear-gradient(135deg,#F6FBF8 0%,#E5F3EA 100%);
-}
-html[data-layout="invertido"] .shell{
-  grid-template-columns:minmax(380px,.88fr) minmax(520px,1.12fr);
-  padding:clamp(22px,3vh,38px) clamp(76px,6.5vw,116px) clamp(46px,5.8vh,64px) clamp(24px,3vw,46px);
-}
-html[data-layout="invertido"] .stage-spacer{order:1}
-html[data-layout="invertido"] .board{order:2}
-
-html[data-layout="panorama"] .wallpaper{
-  background:
-    radial-gradient(56% 52% at 50% 30%,rgba(35,192,46,.18) 0%,rgba(0,73,255,.11) 46%,transparent 76%),
-    radial-gradient(45% 45% at 15% 85%,rgba(0,73,255,.10) 0%,transparent 70%),
-    linear-gradient(135deg,var(--bg-0) 0%,var(--bg-1) 100%);
-}
-html.day[data-layout="panorama"] .wallpaper{
-  background:
-    radial-gradient(56% 52% at 50% 30%,rgba(35,192,46,.22) 0%,rgba(100,144,246,.16) 46%,transparent 76%),
-    radial-gradient(45% 45% at 15% 85%,rgba(100,144,246,.14) 0%,transparent 70%),
-    linear-gradient(135deg,#F6FBF8 0%,#E5F3EA 100%);
-}
-html[data-layout="panorama"] .shell{
-  grid-template-columns:1fr;
-  grid-template-rows:minmax(220px,1fr) auto;
-  align-items:stretch;
-  gap:clamp(12px,1.6vh,22px);
-  padding:clamp(18px,2.2vh,28px) clamp(40px,4vw,76px) clamp(50px,6vh,68px);
-}
-html[data-layout="panorama"] .stage-spacer{order:1;min-height:220px}
-html[data-layout="panorama"] .board{
-  order:2;
-  gap:clamp(10px,1.2vh,14px);
-  padding:clamp(16px,2vh,22px) clamp(22px,2.4vw,32px);
-  max-height:none;
-}
-html[data-layout="panorama"] .id-row{padding-bottom:10px}
-html[data-layout="panorama"] .mid-grid{
-  grid-template-columns:0.56fr 1.44fr;
-  gap:clamp(18px,2vw,28px);
-  padding-bottom:10px;
-}
-html[data-layout="panorama"] .roles{gap:5px}
-html[data-layout="panorama"] .pillars{
-  grid-template-columns:repeat(3,1fr);
-  gap:10px 18px;
-  align-content:start;
-}
-html[data-layout="panorama"] .pillars > .sec-title{
-  grid-column:1 / -1;
-  margin-bottom:2px;
-}
-
-html[data-layout="compacto"] .shell{
-  grid-template-columns:minmax(380px,450px) 1fr;
-}
-html[data-layout="compacto"] .board{
-  gap:12px;
-  padding:clamp(18px,2.4vh,26px) clamp(20px,2vw,26px);
-}
-html[data-layout="compacto"] .id-row{
-  flex-direction:column;
-  align-items:stretch;
-  gap:12px;
-  padding-bottom:12px;
-}
-html[data-layout="compacto"] .clock-box{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  grid-template-rows:auto auto;
-  align-items:center;
-  column-gap:12px;
-  padding-top:10px;
-  border-top:1px solid var(--border-soft);
-}
-html[data-layout="compacto"] .clock-logo{
-  grid-column:1;
-  grid-row:1 / span 2;
-  margin-bottom:0;
-}
-html[data-layout="compacto"] .clock-time,
-html[data-layout="compacto"] .clock-date{
-  grid-column:2;
-  justify-self:end;
-  text-align:right;
-}
-html[data-layout="compacto"] .mid-grid{
-  grid-template-columns:1fr;
-  gap:12px;
-  padding-bottom:12px;
-}
-html[data-layout="compacto"] .pillars{
-  border-left:0;
-  padding-left:0;
-  border-top:1px solid var(--border-soft);
-  padding-top:12px;
-  gap:8px;
-}
-html[data-layout="compacto"] .pillar p{display:none}
-html[data-layout="compacto"] .contacts{gap:6px 14px;font-size:12px}
-
 @media (max-width:1180px){
   html,body{overflow:auto;height:auto;min-height:100%}
   .wallpaper{height:auto;min-height:100vh}
-  .shell,
-  html[data-layout] .shell{
+  .shell{
     grid-template-columns:1fr;
-    grid-template-rows:auto;
     padding:64px 20px 40px;
   }
-  .board,
-  html[data-layout] .board{max-height:none;order:1}
-  .mid-grid,
-  html[data-layout] .mid-grid{grid-template-columns:1fr}
-  .pillars,
-  html[data-layout] .pillars{
-    grid-template-columns:1fr;
-    border-left:0;
-    padding-left:0;
-    border-top:1px solid var(--border-soft);
-    padding-top:14px;
-  }
-  html[data-layout="compacto"] .pillar p{display:block}
+  .board{max-height:none}
+  .mid-grid{grid-template-columns:1fr}
+  .pillars{border-left:0;padding-left:0;border-top:1px solid var(--border-soft);padding-top:14px}
   .stage-spacer{display:none}
 }
 @media (max-width:640px){
   .id-row{flex-direction:column;align-items:flex-start}
   .clock-box{align-items:flex-start;text-align:left}
-  html[data-layout="compacto"] .clock-box{display:flex;flex-direction:column;align-items:flex-start;border-top:0;padding-top:0}
-  html[data-layout="compacto"] .clock-logo{margin-bottom:8px}
-  html[data-layout="compacto"] .clock-time,
-  html[data-layout="compacto"] .clock-date{text-align:left}
 }
 </style>
 </head>
 <body>
 <div class="wallpaper">
   <canvas id="bgCanvas" aria-hidden="true"></canvas>
-
-  <div class="wp-tools" aria-label="Controles do wallpaper">
-    <button class="wp-btn" id="themeBtn" type="button">Tema: Noite</button>
-    <button class="wp-btn" id="layoutBtn" type="button">Layout: Clássico</button>
-  </div>
 
   <main class="shell">
     <section class="board" aria-label="Resumo do portfólio de Bruno Rizzo">
@@ -528,11 +423,11 @@ html[data-layout="compacto"] .contacts{gap:6px 14px;font-size:12px}
         <div>
           <h2 class="sec-title">Papéis</h2>
           <div class="roles">
-            <div class="role-item"><div class="role-top"><span>Coordenação</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
-            <div class="role-item"><div class="role-top"><span>Resultados</span><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
-            <div class="role-item"><div class="role-top"><span>Processos</span><span>80%</span></div><div class="bar"><i style="width:80%"></i></div></div>
-            <div class="role-item"><div class="role-top"><span>Diretorias</span><span>75%</span></div><div class="bar"><i style="width:75%"></i></div></div>
-            <div class="role-item"><div class="role-top"><span>Alinhamento</span><span>55%</span></div><div class="bar"><i style="width:55%"></i></div></div>
+            <div class="role-item" data-pct="93" style="--i:0"><div class="role-top"><span>Coordenação</span><span class="role-pct">93%</span></div><div class="bar"><div class="bar-fill" style="--pct:93%"><i class="bar-core"></i><span class="bar-tip"></span></div></div></div>
+            <div class="role-item" data-pct="90" style="--i:1"><div class="role-top"><span>Resultados</span><span class="role-pct">90%</span></div><div class="bar"><div class="bar-fill" style="--pct:90%"><i class="bar-core"></i><span class="bar-tip"></span></div></div></div>
+            <div class="role-item" data-pct="80" style="--i:2"><div class="role-top"><span>Processos</span><span class="role-pct">80%</span></div><div class="bar"><div class="bar-fill" style="--pct:80%"><i class="bar-core"></i><span class="bar-tip"></span></div></div></div>
+            <div class="role-item" data-pct="75" style="--i:3"><div class="role-top"><span>Diretorias</span><span class="role-pct">75%</span></div><div class="bar"><div class="bar-fill" style="--pct:75%"><i class="bar-core"></i><span class="bar-tip"></span></div></div></div>
+            <div class="role-item" data-pct="55" style="--i:4"><div class="role-top"><span>Alinhamento</span><span class="role-pct">55%</span></div><div class="bar"><div class="bar-fill" style="--pct:55%"><i class="bar-core"></i><span class="bar-tip"></span></div></div></div>
           </div>
         </div>
 
@@ -570,48 +465,35 @@ html[data-layout="compacto"] .contacts{gap:6px 14px;font-size:12px}
 (function () {
   'use strict';
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var html = document.documentElement;
-  var themeBtn = document.getElementById('themeBtn');
-  var layoutBtn = document.getElementById('layoutBtn');
 
-  function syncThemeLabel() {
-    themeBtn.textContent = html.classList.contains('day') ? 'Tema: Dia' : 'Tema: Noite';
-  }
-  themeBtn.addEventListener('click', function () {
-    html.classList.toggle('day');
-    try { localStorage.setItem('wp_theme', html.classList.contains('day') ? 'day' : 'night'); } catch (e) {}
-    syncThemeLabel();
-  });
-  try {
-    if (localStorage.getItem('wp_theme') === 'day') { html.classList.add('day'); }
-  } catch (e) {}
-  syncThemeLabel();
-
-  var layouts = [
-    { id: 'classic', label: 'Clássico' },
-    { id: 'invertido', label: 'Invertido' },
-    { id: 'panorama', label: 'Panorama' },
-    { id: 'compacto', label: 'Compacto' }
-  ];
-  var layoutIndex = 0;
-  function applyLayout(idx, save) {
-    layoutIndex = ((idx % layouts.length) + layouts.length) % layouts.length;
-    var item = layouts[layoutIndex];
-    html.setAttribute('data-layout', item.id);
-    layoutBtn.textContent = 'Layout: ' + item.label;
-    if (save) {
-      try { localStorage.setItem('wp_layout', item.id); } catch (e) {}
+  /* Animação de entrada sincronizada nas barras de papéis */
+  var roleItems = document.querySelectorAll('.role-item[data-pct]');
+  if (!reduced && roleItems.length) {
+    var animStart = performance.now();
+    var fills = [];
+    roleItems.forEach(function (el, idx) {
+      var target = parseFloat(el.getAttribute('data-pct')) || 0;
+      var fillEl = el.querySelector('.bar-fill');
+      var pctEl = el.querySelector('.role-pct');
+      fillEl.style.width = '0%';
+      pctEl.textContent = '0%';
+      fills.push({ target: target, fillEl: fillEl, pctEl: pctEl, delay: idx * 110 });
+    });
+    function stepRoles(now) {
+      var done = true;
+      for (var i = 0; i < fills.length; i++) {
+        var f = fills[i];
+        var elapsed = Math.max(0, now - animStart - f.delay);
+        var p = Math.min(1, elapsed / 1150);
+        if (p < 1) { done = false; }
+        var ease = 1 - Math.pow(1 - p, 4);
+        var cur = f.target * ease;
+        f.fillEl.style.width = cur.toFixed(2) + '%';
+        f.pctEl.textContent = Math.round(cur) + '%';
+      }
+      if (!done) { requestAnimationFrame(stepRoles); }
     }
-  }
-  layoutBtn.addEventListener('click', function () {
-    applyLayout(layoutIndex + 1, true);
-  });
-  try {
-    var savedLayout = localStorage.getItem('wp_layout');
-    var found = layouts.findIndex(function (l) { return l.id === savedLayout; });
-    applyLayout(found >= 0 ? found : 0, false);
-  } catch (e) {
-    applyLayout(0, false);
+    requestAnimationFrame(stepRoles);
   }
 
   /* Relógio em tempo real */
@@ -858,9 +740,7 @@ html[data-layout="compacto"] .contacts{gap:6px 14px;font-size:12px}
     var pos = [0, 0.1, -1.8], sc = 0.72;
     if (wide) {
       var sr = spacer.getBoundingClientRect();
-      var curLayout = html.getAttribute('data-layout') || 'classic';
-      var xWeight = curLayout === 'panorama' ? 0.50 : (curLayout === 'invertido' ? 0.48 : 0.52);
-      var ndcX = ((sr.left + sr.width * xWeight) / Math.max(1, w)) * 2 - 1;
+      var ndcX = ((sr.left + sr.width * 0.52) / Math.max(1, w)) * 2 - 1;
       var ndcY = 1 - ((sr.top + sr.height * 0.5) / Math.max(1, h)) * 2;
       var sw = (sr.width / Math.max(1, w)) * (2 * halfW);
       var sh = (sr.height / Math.max(1, h)) * (2 * halfH);
